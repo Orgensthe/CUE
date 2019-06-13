@@ -4,8 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// 밑에는 라우트 파일 저런식으로 열면 라우트 파일이 연결됌
+
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var signup = require('./routes/signup');
+var signup_creator = require('./routes/signup_creator');
+var login = require('./routes/login');
+var list = require('./routes/list');
+
+
 
 var app = express();
 
@@ -21,7 +28,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/signup', signup);
+app.use('/signup_creator', signup_creator);
+app.use('/login', login);
+app.use('/list', list);
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
