@@ -1,0 +1,91 @@
+body {
+    background-color: #333;
+    /*width: 500px;*/
+    /*margin: 30px auto;*/
+  }
+  
+  nav{
+    position: relative;
+  }
+  .menu-trigger {
+    margin: 30px;
+    float: left;
+  }
+  .menu-trigger,
+  .menu-trigger span {
+    display: inline-block;
+    transition: all .4s;
+    box-sizing: border-box;
+  }
+  
+  .menu-trigger {
+    position: relative;
+    width: 30px;
+    height: 22px;
+  }
+  
+  .menu-trigger span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 4px;
+  }
+  
+  .menu-trigger span:nth-of-type(1) {
+    top: 0;
+  }
+  
+  .menu-trigger span:nth-of-type(2) {
+    top: 10px;
+  }
+  
+  .menu-trigger span:nth-of-type(3) {
+    bottom: 0;
+  }
+  
+  /* type-01 */
+  /* 중앙 라인이 고정된 자리에서 투명하게 사라지며 상하라인 회전하며 엑스자 만들기 */
+  .menu-trigger.active-1 span:nth-of-type(1) {
+    -webkit-transform: translateY(10px) rotate(-45deg);
+    transform: translateY(10px) rotate(-45deg);
+  }
+  
+  .menu-trigger.active-1 span:nth-of-type(2) {
+    opacity: 0;
+  }
+  
+  .menu-trigger.active-1 span:nth-of-type(3) {
+    -webkit-transform: translateY(-10px) rotate(45deg);
+    transform: translateY(-10px) rotate(45deg);
+  }
+  
+  .logo {
+    width: 220px;
+    height: 160px;
+    position: absolute;
+    left: 41%;
+    top: 30px;
+  
+  }
+  
+  
+  .logo_circle{
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    left: 30%;
+  
+  }
+  
+  .search, .mypageicon{
+    width: 40px;
+    height: 40px;
+  }
+  
+  .icons{
+    top: 30px;
+    right: 30px;
+    position: absolute;
+  }
