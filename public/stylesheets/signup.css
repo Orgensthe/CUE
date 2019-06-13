@@ -1,0 +1,56 @@
+p{
+  text-align: center;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.title{
+  margin: 5em;
+}
+
+.container{
+  font-size: 15px;
+  color: #ffffff;
+  margin: auto;
+}
+
+.name, .email, .password, .retype_pass, .phone{
+  margin: 15px;
+  border: none;
+  font-size: 13px;
+  border-radius: 3px;
+  width: 500px;
+  padding: 10px;
+
+
+
+}
+
+.favorite input{
+  margin: 10px;
+
+}
+
+
+label{
+  text-align: right;
+  line-height: 68px;
+
+
+  width: 100px;
+  margin-right: 20px;
+  margin-bottom: 0px;
+}
+
+
+
+.form-group{
+  /*float: none;*/
+  margin-bottom: 0px;
+  height: 68px;
+  text-align: center;
+
+}
+
+

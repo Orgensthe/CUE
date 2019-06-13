@@ -1,0 +1,68 @@
+.user{
+  border-right-color: #ffffff;
+  border-right-style: solid;
+  border-right-width: 1px;
+}
+
+.userlogin{
+  float: right;
+}
+
+form{
+  margin: 0;
+  /*float: left;*/
+}
+
+.id, .password, .log_in{
+  margin-right: 30px;
+  margin-left: 15px;
+  margin-bottom: 20px;
+  padding: 1em;
+  border: none;
+}
+
+.id{
+  width: 18em;
+}
+
+.password{
+  width: 18em;
+}
+
+.log_in{
+  width: 18em;
+}
+
+.signup{
+  width: 6em;
+  margin-left: 15px;
+  margin-right: 0.7em;
+  padding: 1em;
+  border: none;
+}
+
+.forgot{
+  width: 11em;
+  padding: 1em;
+  border: none;
+}
+
+p{
+  text-align: center;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.title{
+  margin: 5em;
+}
+
+
+.naver{
+  border: none;
+  width: 18em;
+  margin: 0.8em;
+  padding: 1em;
+}
+

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CUE!</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap-grid.css">
+<!--  <link rel="stylesheet" href="css/bootstrap-reboot.css">-->
+<!--  <link rel="stylesheet" href="css/bootstrap-theme.css">-->
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/signup.css">
+</head>
+<body>
+<header>
+  <nav>
+    <a class="menu-trigger" href="#">
+      <span></span>
+      <span></span>
+      <span></span>
+    </a>
+
+    <div class="logo_div">
+      <!--      <img class="logo mx-auto d-block" src="img/logo_nav.png">-->
+    </div>
+
+
+
+    <div class="icons">
+      <img class="search" src="img/search.svg">
+      <img class="mypageicon" src="img/mypageicon.svg">
+    </div>
+  </nav>
+</header>
+
+<div class="title">
+  <p>개인 회원가입</p>
+</div>
+<div class="container">
+  <form class="form-horizontal">
+    <!--name-->
+    <div class="form-group">
+
+      <div class="">
+        <label class="">이름</label>
+        <input type="text" name="name" placeholder="NAME" class="name" data-rule-reauired="true" maxlength="10">
+      </div>
+    </div>
+
+<!--    email-->
+    <div class="form-group">
+
+      <div class="">
+        <label class="">이메일</label>
+        <input type="email" name="email" placeholder="EMAIL" class="email" data-rule-reauired="true" maxlength="40">
+      </div>
+    </div>
+
+<!--    password-->
+    <div class="form-group">
+
+      <div class="">
+        <label class="">비밀번호</label>
+        <input type="password" name="password" placeholder="PASSWORD" class="password" data-rule-reauired="true" maxlength="20">
+      </div>
+    </div>
+
+<!--    password check-->
+    <div class="form-group">
+
+      <div class="">
+        <label class="">비밀번호 확인</label>
+        <input type="password" name="retype_pass" placeholder="RETYPE-PASSWORD" class="retype_pass" data-rule-reauired="true" maxlength="20">
+      </div>
+    </div>
+
+<!--    phone-->
+    <div class="form-group">
+
+      <div class="">
+        <label class="">핸드폰 번호</label>
+        <input type="tel" name="phone" placeholder="PHONE" class="phone" data-rule-reauired="true">
+      </div>
+    </div>
+
+    <div class="form-group favorite">
+
+      <div class="">
+        <label class="">관심사</label>
+        <input type="checkbox" name="rap/hiphop" value="랩/힙합">랩/힙합
+        <input type="checkbox" name="rock/band" value="락/밴드">락/밴드
+        <input type="checkbox" name="dance" value="댄스">댄스
+        <input type="checkbox" name="traditional_music" value="국악">국악
+        <input type="checkbox" name="traditional_dance" value="현대무용">현대무용
+        <input type="checkbox" name="play" value="연극">연극
+        <input type="checkbox" name="exhibition" value="전시회">전시회<br>
+        <input type="checkbox" name="movie" value="영화제">영화제
+        <input type="checkbox" name="etc" value="기타">기타
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/menu.js"></script>
+</body>
+</html>
+
