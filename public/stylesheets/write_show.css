@@ -1,0 +1,22 @@
+body{
+    background-color: #f2f2f2;
+}
+table{
+    margin-top: 10%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-size: 120%;
+    border-collapse: separate;
+    border-spacing: 20px 10px;
+}
+input[type="text"]{
+    background-color:transparent;
+    border-left-width:0; border-right-width:0; border-top-width:0; border-bottom-width: 2px;
+    border-bottom-color: #023759;
+}
+input[type="text"]:focus{
+    outline: none;
+}
+textarea:focus{
+    outline: none;
+}
