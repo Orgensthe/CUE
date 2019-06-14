@@ -64,6 +64,14 @@ footer{
     margin-left: -55%;
 }
 
+#page-name{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+    text-shadow: 3px 3px 3px black;
+    font-weight: bold;
+}
+
 #profile{
     padding-left: 15%;
     margin-bottom: 5%;
