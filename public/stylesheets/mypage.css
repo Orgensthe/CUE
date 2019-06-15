@@ -85,18 +85,18 @@ footer{
     margin-right: auto !important;
 }
 
-#bright{
+.bright{
     background-color: #023759;
 }
-#bright:hover{
+.bright:hover{
     background-color: gray;
 }
-#bright:link{
+.bright:link{
     
 }
-#deep{
+.deep{
     background-color: #001625;
 }
-#deep:hover{
+.deep:hover{
     background-color: gray;
 }
