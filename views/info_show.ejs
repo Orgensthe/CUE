@@ -16,14 +16,13 @@
     <div class="logo_div">
     </div>
 
-    <div class="search-icon">
-      <img class="search" src="images/search.svg">
-    </div>
     <div class="icons">
+      <img class="search" src="images/search.svg">
       <img class="mypageicon" src="images/mypageicon.svg">
     </div>
 
     <div class="search-drawer shadow-bar s-closed">
+<<<<<<< HEAD
       <div class="search-tool">
         <div id="search-nav">
           <div class="search-close">X</div>
@@ -33,7 +32,22 @@
             <input class="in-search" type="text" name="s" value="" aria-required="false" autocomplete="on">
           </form>
         </div>
+      <div class="icons">
+        <img class="search" src="images/search.svg">
+        <img class="mypageicon" src="images/mypageicon.svg">
       </div>
+=======
+      <form>
+        <select class="select">
+          <option value="all">전체</option>
+          <option value="genre">장르</option>
+          <option value="status">공연상태</option>
+          <option value="place">장소</option>
+        </select>
+        <input class="in-search" type="text" aria-required="false" autocomplete="on">
+        <input class="gosearch" type="image" src="images/search.svg" name="submit" value="submit">
+      </form>
+>>>>>>> origin/master
     </div>
 
     <div class="overlay"></div>
@@ -102,25 +116,10 @@
       </div>
     </div>
 
-
     <!--공연 내용에 대한 세부 정보 및 탭-->
-    <div class = "tab">
-      <ul>
-        <li>상세정보</li>
-        <li>관람후기</li>
-        <li>Q & A</li>
-        <li>유의사항</li>
-        <li>아티스트</li>
-      </ul>
-    </div>
-
-    <div class = "reserve">
-      <input type="button" value="예약하기">
-    </div>
-
-    <ul class="nav pills">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">상세정보</a>
+    <ul class="nav justify-content-center nav-pills bg-lightgray nav-justified ">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">상세정보</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">유의사항</a>
@@ -137,8 +136,9 @@
     </ul>
 
     <div class="info1">
-      <img src="images/3.png">
-
+      각 탭에 맞는 데이터 불러오기
+      <img src="images/3.png"/>
+      <div> </div>
     </div>
   </div>
 

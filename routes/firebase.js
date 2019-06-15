@@ -72,12 +72,6 @@ function userCheck(email) {
   });
 }
 
-function login(id,pwd) {
-  // new Promise() 추가     
-  return new Promise(function (resolve, reject) {
-      resolve(loginActive(id,pwd)).then(value => value);
-  });
-}
 
 
 function writePhost(date,starttime,endtime,place,price,fileURL,introduce) {
@@ -104,6 +98,20 @@ function writePhost(date,starttime,endtime,place,price,fileURL,introduce) {
  
 }
 
+function logIn(userId,pwd){
+  var flag = true;
+  firebase.initializeApp(firebaseConfig);
+  firebase.database().ref('users/'+userId).once('value').then(function(data) {
+    if(data.val() == null){
+      if(data.val().password == pwd){
+        flag = true;
+      }
+    } else {
+      flag = false;
+    }
+  })
+  return flag;   
+}
 
 
 

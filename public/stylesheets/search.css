@@ -1,61 +1,18 @@
-body {
-  margin:0px;
-  /*background:#fff;*/
-  font-family:'Roboto', sans-serif;
-  /*overflow:hidden;*/
-}
-
 .search-icon {
   height:100px;
   width:100%;
   /*background:#8b50b0;*/
 }
 
-.search{
-  position:absolute;
-  top:40px;
-  right:80px;
-  width:50px;
-  z-index: 3;
-  margin: 0;
-}
-
 .search-drawer{
   height:100px;
-  position:absolute;
-  right:0px;
-  top:0px;
+  position:relative;
+  /*right:0px;*/
+  /*top:0px;*/
+  background-color: #3c3c3c;
   display:none;
   z-index: 2;
 }
-
-/*검색바 크기*/
-.search-tool {
-  height:100px;
-  width:100%;
-  background-color: #3c3c3c;
-}
-
-/*검색하는 곳 위치*/
-#search-nav {
-  height:80px;
-  width:100%;
-}
-
-/*엑스표 위치*/
-.search-close {
-  font-size: 30px;
-  color: white;
-  text-align: center;
-  cursor: pointer;
-  float: right;
-  position: relative;
-  z-index: 1;
-  top: 35px;
-  right: 50px;
-
-}
-
 
 .overlay {
   height:100vh;
@@ -80,27 +37,33 @@ body {
   animation: swiftoutRight 1s cubic-bezier(.55,0,.1,1) normal;
 }
 
-/** SEARCH ELEMENTS **/
+.gosearch{
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 30px;
+  right: 40px;
+}
 
-/*검색하는 곳*/
-#search-form {
-  position: relative;
-  top: -64px;
-  /*z-index: 0;*/
-  /*height: 200px;*/
+.select{
+  position: absolute;
+  left: 10%;
+  border-style: none;
+  font-size: 15px;
+  width: 100px;
+  height: 50px;
+  top: 25px;
+
 }
 
 .in-search {
-  margin: 0 auto;
   height: 50px;
-  width: 800px;
-  position: relative;
-  top: 10px;
-  left: 250px;
-  float:left;
-  display: block;
+  width: 70%;
+  position: absolute;
+  top: 25px;
+  margin-left: 20%;
   border: none;
-  /*padding: 10px 0;*/
+  border-radius: 10px;
   color: #000;
   font-size: 1.6rem;
   text-indent: 15px;
@@ -112,9 +75,6 @@ body {
   background-color: #f5f5f5;
   outline: 0px;
 }
-
-
-/** SHADOW **/
 
 .shadow-bar {
   box-shadow: 0 16px 24px 2px hsla(0, 0%, 0%, 0.14), 0 5px 30px 5px hsla(0, 0%, 0%, 0.12), 0 8px 10px -5px hsla(0, 0%, 0%, 0.4);

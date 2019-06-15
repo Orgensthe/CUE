@@ -25,6 +25,7 @@ nav{
   cursor: pointer;
   z-index: 9;
   transition: left 0.3s ease-in-out;
+
 }
 .menu2 div {
   background-color: white;
@@ -114,17 +115,13 @@ nav{
   position: absolute;
 }
 
-.main_back2{
-  padding: 0;
-  width: 1284px;
-  margin-top: 800px;
-  position: relative;
-}
+
 
 .container{
   margin: 0;
   padding: 0;
   text-align: center;
+  position: relative;
 }
 
 .magam{
@@ -135,6 +132,29 @@ nav{
   left: 50%;
   transform:translate(-50%, -50%);
 
+}
+
+.magam_back{
+  background-image: url("../images/main_back2.png");
+  background-size: cover;
+  padding: 0;
+  width: 100%;
+  height: 1000px;
+  background-repeat: no-repeat;
+  margin-top: 800px;
+  position: absolute;
+}
+
+.row img{
+  margin: 10px;
+  width: 200px;
+  height: 300px;
+}
+
+.row{
+  text-align: center;
+  position: absolute;
+  margin-top: 1100px;
 }
 
 
