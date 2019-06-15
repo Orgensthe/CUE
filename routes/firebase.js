@@ -47,6 +47,21 @@ function userInDB(userId){
   return flag;
 }
 
+function logIn(userId,pwd){
+  var flag = true;
+  firebase.initializeApp(firebaseConfig);
+  firebase.database().ref('users/'+userId).once('value').then(function(data) {
+    if(data.val() == null){
+      if(data.val().password == pwd){
+        flag = true;
+      }
+    } else {
+      flag = false;
+    }
+  })
+  return flag;   
+}
+
  module.exports ={
   writeUserSearchLog:writeUserSearchLog,
   userSignIn:userSignIn
