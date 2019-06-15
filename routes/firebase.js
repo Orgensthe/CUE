@@ -27,7 +27,6 @@ function userSignIn(email,userName, password,phone,interest) {
 
 function writeUserSearchLog(userId,searchValue) {
     // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
     firebase.database().ref('searchLog/' + userId).set({
 
     });
@@ -36,17 +35,28 @@ function writeUserSearchLog(userId,searchValue) {
 
 function userInDB(userId){
   var flag = true;
-  firebase.initializeApp(firebaseConfig);
   firebase.database().ref('users/'+userId).once('value').then(function(data) {
     if(data.val() == null){
-      return false;
+      
+      flag = false;
     } else {
-      return true;
+      flag = true;
     }
+    
   })
+  return flag
+}
+
+function userCheck(email) {
+  // new Promise() 추가
+  return new Promise(function (resolve, reject) {
+      resolve( userInDB(email)).then(value => value);
+  });
 }
 
  module.exports ={
   writeUserSearchLog:writeUserSearchLog,
-  userSignIn:userSignIn
+  userSignIn:userSignIn,
+  userInDB:userInDB,
+  userCheck:userCheck
 };

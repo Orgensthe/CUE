@@ -16,12 +16,20 @@ router.post('/', function(req, res, next) {
     var pw = req.body.password.toString()
     var phone =  req.body.phone.toString()
 
-    if(fb.userInDB(email)){
-    	console("fail");
-    }else {
-    	fb.userSignIn(email,name,pw,phone,1)	
+
+    async function local(){
+        var flag = await fb.userCheck(email);
+        if(flag){
+            res.send('<script> alert("이미 회원가입 되어있는 이메일 입니다.");history.go(-1)</script>');
+        }
+        else{
+            res.render('./index.html');
+        } 
     }
-    res.render('./index.html')
+    
+    local();
+    
+
 });
 
 module.exports = router;
