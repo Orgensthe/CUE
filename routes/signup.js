@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('./signup.html');
+    res.render('signup.html');
 });
 
 module.exports = router;
