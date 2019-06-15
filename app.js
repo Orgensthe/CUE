@@ -34,6 +34,7 @@ var board = require('./routes/board');
 var info_show = require('./routes/info_show');
 var mypage = require('./routes/mypage');
 var write_show = require('./routes/write_show');
+var list_search = require('./routes/list_search');
 
 
 
@@ -49,7 +50,7 @@ app.use('/board', board);
 app.use('/info_show', info_show);
 app.use('/mypage', mypage);
 app.use('/write_show', write_show);
-
+app.use('/list_search',list_search);
 
 
 // catch 404 and forward to error handler
