@@ -61,7 +61,7 @@
 </header>
 
 <div class="container2">
-  <form action="/write_show" method="POST">
+  <form action="/write_show" method="POST" enctype="multipart/form-data">
     <div>
       <label class="date">날짜</label>
       <input type="date" value="date" name="date">
@@ -81,7 +81,7 @@
     </div>
     <div>
       <label class="file">파일첨부</label>
-      <input class="file_select" type="file" value="file" name="file">
+      <input class="file" type="file" value="file" enctype="multipart/form-data"   name="avatar">
     </div>
     <div>
       <label class="article">소개글</label>
