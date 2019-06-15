@@ -28,7 +28,7 @@ img{
   font-weight: bold;
   margin-top: 200px;
   margin-bottom: 50px;
-  text-shadow: 3px 3px 3px rgb(32, 32, 32);
+  text-shadow: 2px 2px 2px rgb(61, 61, 61);
 }
 
 button{
@@ -42,7 +42,6 @@ button{
 .category, .category_perfo{
   text-align: center;
   margin-bottom: 50px;
-  font-size: 120%;
 }
 
 .sort{
