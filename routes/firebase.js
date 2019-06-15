@@ -46,12 +46,13 @@ function userInDB(userId){
 }
 
 function loginActive(userId,pwd){
-  var flag = true;
   firebase.initializeApp(firebaseConfig);
   firebase.database().ref('users/'+userId).once('value').then(function(data) {
     if(data.val() == null){
       if(data.val().password == pwd){
         flag = true;
+      } else {
+        flag = false;
       }
     } else {
       flag = false;
