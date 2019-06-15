@@ -6,4 +6,8 @@ router.get('/', function(req, res, next) {
   res.render('write_show.html');
 });
 
+router.post('/', function(req, res, next) {
+    res.render('write_show.html');
+  });
+
 module.exports = router;
