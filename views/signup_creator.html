@@ -48,7 +48,7 @@
   <p>아티스트 회원가입</p>
 </div>
 <div class="container">
-  <form class="form-horizontal">
+  <form class="form-horizontal" action = "/makeSignUp" onsubmit = 'return formCheck()' method="POST">
     <!--name-->
     <div class="form-group">
 
@@ -109,6 +109,11 @@
         <input type="checkbox" name="etc" value="기타">기타
       </div>
     </div>
+    <div class="submit">
+        <div class="">
+            <input type="submit" value="SIGNUP" class="log_in"><br>
+        </div>
+      </div>
   </form>
 </div>
 
@@ -116,7 +121,44 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="javascripts/bootstrap.js"></script>
+<script type="text/javascript" src="javascripts/menu.js"></script>
+<script>
+  function formCheck(){
+    var email = document.getElementsByName('email')[0].value;
+    var name = document.getElementsByName('name')[0].value;
+    var password = document.getElementsByName('password')[0].value;
+    var retype_pass = document.getElementsByName('retype_pass')[0].value;
+    var phone = document.getElementsByName('phone')[0].value;
+    
+    if(email.length === 0) {
+      alert("입력란을 모두 입력해 주세요.");
+      return false;
+    } 
+    else if (name.length === 0){
+      alert("입력란을 모두 입력해 주세요.");
+      return false;
+    }
+    else if (password.length === 0){
+      alert("입력란을 모두 입력해 주세요.");
+      return false;
+    }
+    else if (retype_pass.length === 0){
+      alert("입력란을 모두 입력해 주세요.");
+      return false;
+    }
+    else if (phone.length === 0){
+      alert("입력란을 모두 입력해 주세요.");
+      return false;
+    } else if(password != retype_pass) {
+      alert("비밀번호를 확인해주세요.");
+      return false;
+    } else {
+      return true;
+    }
+  }
+</script>
 <script type="text/javascript" src="javascripts/menu2.js"></script>
+
 </body>
 </html>
 
