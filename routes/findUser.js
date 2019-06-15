@@ -6,14 +6,15 @@ var fb = require("./firebase");
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-    
-    console.log(req.query.id);
-    console.log(req.query.password);
 
-    fb.userSignIn("sibaasdqwerqwerqwerqwerqweSfasdfl","sibal","sibal","sibal","sibal")
+	console.log(req.query.id);
+	console.log(req.query.password);
 
 
-    res.render('./index.html');
+
+	fb.userSignIn("sibaasdqwerqwerqwerqwerqweSfasdfl","sibal","sibal","sibal","sibal")
+	res.render('./index.html');
+
 });
 
 module.exports = router;

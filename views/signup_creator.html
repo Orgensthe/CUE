@@ -7,27 +7,56 @@
   <link rel="stylesheet" href="stylesheets/bootstrap-grid.css">
   <!--  <link rel="stylesheet" href="css/bootstrap-reboot.css">-->
   <!--  <link rel="stylesheet" href="css/bootstrap-theme.css">-->
-  <link rel="stylesheet" href="stylesheets/menu.css">
+  <link rel="stylesheet" href="stylesheets/menu3.css">
   <link rel="stylesheet" href="stylesheets/signup.css">
+  <link rel="stylesheet" href="stylesheets/search.css">
 </head>
 <body>
 <header>
   <nav>
-    <a class="menu-trigger" href="#">
-      <span></span>
-      <span></span>
-      <span></span>
-    </a>
-
     <div class="logo_div">
-      <!--      <img class="logo mx-auto d-block" src="img/logo_nav.png">-->
     </div>
 
-
-
-    <div class="icons">
+    <div class="search-icon">
       <img class="search" src="images/search.svg">
+    </div>
+    <div class="icons">
       <img class="mypageicon" src="images/mypageicon.svg">
+    </div>
+
+    <div class="search-drawer shadow-bar s-closed">
+      <div class="search-tool">
+        <div id="search-nav">
+          <div class="search-close">X</div>
+        </div>
+        <div id="search-form">
+          <form>
+            <input class="in-search" type="text" name="s" value="" aria-required="false" autocomplete="on">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <div class="menu2">
+      <div class='top'></div>
+      <div class='middle'></div>
+      <div class='bottom'></div>
+    </div>
+    <div class="menu-box">
+      <div class="menu2-items">
+        <div class="item">Lorem</div>
+        <div class="item">Ipsum</div>
+        <div class="item">Magnam</div>
+        <div class="item">Quibusdam</div>
+        <div class="item">Nesciunt</div>
+        <div class="item">Dolor</div>
+        <div class="item">Amet</div>
+        <div class="item">Viverra</div>
+        <div class="item">Curabitur</div>
+        <div class="item">Porta</div>
+      </div>
     </div>
   </nav>
 </header>
@@ -36,7 +65,7 @@
   <p>아티스트 회원가입</p>
 </div>
 <div class="container">
-  <form class="form-horizontal">
+  <form class="form-horizontal" action = "/makeSignUp" onsubmit = 'return formCheck()' method="POST">
     <!--name-->
     <div class="form-group">
 
@@ -97,6 +126,11 @@
         <input type="checkbox" name="etc" value="기타">기타
       </div>
     </div>
+    <div class="submit">
+        <div class="">
+            <input type="submit" value="SIGNUP" class="log_in"><br>
+        </div>
+      </div>
   </form>
 </div>
 
@@ -105,6 +139,44 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="javascripts/bootstrap.js"></script>
 <script type="text/javascript" src="javascripts/menu.js"></script>
+<script>
+  function formCheck(){
+    var email = document.getElementsByName('email')[0].value;
+    var name = document.getElementsByName('name')[0].value;
+    var password = document.getElementsByName('password')[0].value;
+    var retype_pass = document.getElementsByName('retype_pass')[0].value;
+    var phone = document.getElementsByName('phone')[0].value;
+    
+    if(email.length === 0) {
+      alert("입력란을 모두 입력해 주세요.");
+      return false;
+    } 
+    else if (name.length === 0){
+      alert("입력란을 모두 입력해 주세요.");
+      return false;
+    }
+    else if (password.length === 0){
+      alert("입력란을 모두 입력해 주세요.");
+      return false;
+    }
+    else if (retype_pass.length === 0){
+      alert("입력란을 모두 입력해 주세요.");
+      return false;
+    }
+    else if (phone.length === 0){
+      alert("입력란을 모두 입력해 주세요.");
+      return false;
+    } else if(password != retype_pass) {
+      alert("비밀번호를 확인해주세요.");
+      return false;
+    } else {
+      return true;
+    }
+  }
+</script>
+<script type="text/javascript" src="javascripts/menu2.js"></script>
+<script type="text/javascript" src="javascripts/search.js"></script>
+
 </body>
 </html>
 

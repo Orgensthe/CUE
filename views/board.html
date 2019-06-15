@@ -2,32 +2,65 @@
 <html>
 <head>
 	<title>CUE!</title>
+
 	<link rel="stylesheet" href="stylesheets/bootstrap.css">
   <link rel="stylesheet" href="stylesheets/bootstrap-grid.css">
-  <link rel="stylesheet" href="stylesheets/menu.css">
+  <link rel="stylesheet" href="stylesheets/menu3.css">
   <link rel="stylesheet" href="stylesheets/board.css">
+  <link rel="stylesheet" href="stylesheets/search.css">
 </head>
 
 <body>
-  <header>
-    <nav>
-      <a class="menu-trigger" href="#">
-        <span></span>
-        <span></span>
-        <span></span>
-      </a>
+<header>
+  <nav>
+    <div class="logo_div">
+    </div>
 
-      <div class="logo_div">
-        <!--
-        <img class="logo mx-auto d-block" src="../public/images/logo.png">
-        -->
+    <div class="search-icon">
+      <img class="search" src="images/search.svg">
+    </div>
+    <div class="icons">
+      <img class="mypageicon" src="images/mypageicon.svg">
+    </div>
+
+    <div class="search-drawer shadow-bar s-closed">
+      <div class="search-tool">
+        <div id="search-nav">
+          <div class="search-close">X</div>
+        </div>
+        <div id="search-form">
+          <form>
+            <input class="in-search" type="text" name="s" value="" aria-required="false" autocomplete="on">
+          </form>
+        </div>
       </div>
-      <div class="icons">
-        <img class="search" src="images/search.svg">
-        <img class="mypageicon" src="images/mypageicon.svg">
+    </div>
+
+    <div class="overlay"></div>
+
+
+    <div class="menu2">
+      <div class='top'></div>
+      <div class='middle'></div>
+      <div class='bottom'></div>
+    </div>
+    <div class="menu-box">
+      <div class="menu2-items">
+        <div class="item">Lorem</div>
+        <div class="item">Ipsum</div>
+        <div class="item">Magnam</div>
+        <div class="item">Quibusdam</div>
+        <div class="item">Nesciunt</div>
+        <div class="item">Dolor</div>
+        <div class="item">Amet</div>
+        <div class="item">Viverra</div>
+        <div class="item">Curabitur</div>
+        <div class="item">Porta</div>
       </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
+</header>
+
 
   <div class="container">
     <!--게시글 목록-->
@@ -69,13 +102,12 @@
   </div>
 
 
-    <footer>
-      footer
-    </footer>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/menu.js"></script>
-  </body>
+<script type="text/javascript" src="javascripts/bootstrap.js"></script>
+<script type="text/javascript" src="javascripts/menu2.js"></script>
+<script type="text/javascript" src="javascripts/search.js"></script>
+
+</body>
 </html>

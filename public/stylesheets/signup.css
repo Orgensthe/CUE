@@ -1,6 +1,5 @@
 p{
   text-align: center;
-  color: #ffffff;
   font-size: 30px;
   font-weight: bold;
 }
@@ -11,7 +10,7 @@ p{
 
 .container{
   font-size: 15px;
-  color: #ffffff;
+
   margin: auto;
 }
 
