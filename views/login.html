@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>CUE!</title>
-  <link rel="stylesheet" href="../public/stylesheets/bootstrap.css">
-  <link rel="stylesheet" href="../public/stylesheets/bootstrap-grid.css">
-  <link rel="stylesheet" href="css/menu.css">
-  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="stylesheets/bootstrap.css">
+  <link rel="stylesheet" href="stylesheets/bootstrap-grid.css">
+  <link rel="stylesheet" href="stylesheets/menu.css">
+  <link rel="stylesheet" href="stylesheets/login.css">
+  
+
 </head>
 <body>
 <header>
@@ -18,14 +20,19 @@
     </a>
 
     <div class="logo_div">
-<!--      <img class="logo mx-auto d-block" src="img/logo_nav.png">-->
+<!--      <img class="logo mx-auto d-block" src="images/logo_nav.png">-->
     </div>
 
 
 
     <div class="icons">
+<<<<<<< HEAD
       <img class="search" src="../public/images/search.svg">
       <img class="mypageicon" src="../public/images/mypageicon.svg">
+=======
+      <img class="search" src="images/search.svg">
+      <img class="mypageicon" src="images/mypageicon.svg">
+>>>>>>> upstream/master
     </div>
   </nav>
 </header>
@@ -36,9 +43,9 @@
 
 <div class="login center-block row">
   <div class="col-sm-6 user">
-    <form class="userlogin">
+    <form class="userlogin" action="/findUser" >
       <input type="text" name="id" placeholder="ID" class="id"><br>
-      <input type="text" name="password" placeholder="PASSWORD" class="password"><br>
+      <input type="password" name="password" placeholder="PASSWORD" class="password"><br>
       <input type="submit" value="LOGIN" class="log_in"><br>
       <input type="button" value="회원가입" class="signup">
       <input type="button" value="아이디/비밀번호 찾기" class="forgot">
@@ -56,7 +63,7 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.js"></script>
-<script type="text/javascript" src="js/menu.js"></script>
+<script type="text/javascript" src="javascripts/bootstrap.js"></script>
+<script type="text/javascript" src="javascripts/menu.js"></script>
 </body>
 </html>
