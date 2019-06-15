@@ -43,6 +43,7 @@ function writeUserSearchLog(userId,searchValue) {
       }
     })
   });
+}
 
 
 
@@ -108,4 +109,3 @@ module.exports ={
   writePhost:writePhost,
   readPhost:readPhost
 };
-
