@@ -43,3 +43,17 @@ button{
   text-align: right;
   margin-bottom: 50px;
 }
+
+.page_bar{
+  text-align: center;
+  margin-top: 100px;
+
+}
+
+.pagination li a{
+  border: none;
+  background: none;
+  color: #ffffff;
+  margin: 10px;
+
+}

@@ -90,3 +90,28 @@ nav{
   right: 30px;
   position: absolute;
 }
+
+.main_back2{
+  padding: 0;
+  width: 1284px;
+  margin-top: 800px;
+  position: relative;
+}
+
+.container{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.magam{
+  z-index: 1;
+  margin-top: 1100px;
+  margin-right: auto;
+  margin-left: auto;
+  position: absolute;
+
+
+}
+
+
