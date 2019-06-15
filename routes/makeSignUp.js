@@ -9,19 +9,31 @@ var fb = require("./firebase");
 
 /* GET home page. */
 router.post('/', function(req, res, next) {
-	var email =Buffer.from(req.body.email).toString('base64')
+    var email =Buffer.from(req.body.email).toString('base64')
     // console.log(Buffer.from(email, 'base64').toString('ascii'));  나중에 이메일 불러올때 디코딩하는 방법
 
     var name = req.body.name.toString()
     var pw = req.body.password.toString()
     var phone =  req.body.phone.toString()
 
-    if(fb.userInDB(email)){
-    	console.log("fail");
-    }else {
-    	fb.userSignIn(email,name,pw,phone,1)	
+
+    async function local(){
+        var flag;
+        flag = await fb.userCheck(email);
+        console.log("complete signupAction");
+        console.log("flag is " + flag);
+        if(flag === false){
+            fb.userSignIn(email,name,pw,phone,1);
+            res.render('./index.html');
+        }
+        else{
+            res.send('<script> alert("이미 회원가입 되어있는 이메일 입니다.");history.go(-1)</script>');
+        } 
     }
-    res.render('./index.html')
+    
+    local();
+    
+
 });
 
 module.exports = router;
