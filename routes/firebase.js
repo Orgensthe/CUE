@@ -33,7 +33,6 @@ function writeUserSearchLog(userId,searchValue) {
   }
 
 var flag;
-
 function userInDB(userId){
   firebase.database().ref('users/'+userId).once('value').then(function(data) {
     if(data.val() == null){
@@ -45,20 +44,25 @@ function userInDB(userId){
   return flag
 }
 
-function loginActive(userId,pwd){
-  firebase.initializeApp(firebaseConfig);
-  firebase.database().ref('users/'+userId).once('value').then(function(data) {
-    if(data.val() == null){
+var flag2;
+function loginActive(id,pwd){
+  firebase.database().ref('users/'+ id).once('value').then(function(data) {
+    if(data.val() != null){
+      console.log(1);
       if(data.val().password == pwd){
-        flag = true;
+        flag2 = true;
+        console.log(2);
       } else {
-        flag = false;
+        console.log(3);
+        flag2 = false;
       }
     } else {
-      flag = false;
+      console.log(4);
+      flag2 = false;
     }
   })
-  return flag;   
+  console.log(flag2);
+  return flag2
 }
 
 function userCheck(email) {
@@ -78,7 +82,8 @@ function login(id,pwd) {
   writeUserSearchLog:writeUserSearchLog,
   userSignIn:userSignIn,
   userInDB:userInDB,
-  logIn:logIn,
+  loginActive:loginActive,
+  login:login,
   userCheck:userCheck
 };
 
