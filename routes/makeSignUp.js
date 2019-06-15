@@ -17,7 +17,7 @@ router.post('/', function(req, res, next) {
     var phone =  req.body.phone.toString()
 
     if(fb.userInDB(email)){
-    	console("fail");
+    	console.log("fail");
     }else {
     	fb.userSignIn(email,name,pw,phone,1)	
     }

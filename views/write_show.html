@@ -2,92 +2,89 @@
 <html>
 <head>
 	<title>CUE!</title>
-	<link rel="stylesheet" href="../public/stylesheets/bootstrap.css">
-  <link rel="stylesheet" href="../public/stylesheets/bootstrap-grid.css">
-  <link rel="stylesheet" href="../public/stylesheets/menu.css">
-  <link rel="stylesheet" href="../public/stylesheets/write_show.css">
+
+	<link rel="stylesheet" href="stylesheets/bootstrap.css">
+  <link rel="stylesheet" href="stylesheets/bootstrap-grid.css">
+  <link rel="stylesheet" href="stylesheets/menu3.css">
+  <link rel="stylesheet" href="stylesheets/write_show.css">
 </head>
 
 <body>
-  <header>
-    <nav>
-      <a class="menu-trigger" href="#">
-        <span></span>
-        <span></span>
-        <span></span>
-      </a>
-  
-      <img class="logo mx-auto d-block" src="../public/images/logo.png">
-      <div class="icons">
-        <img class="search" src="../public/images/search.svg">
-        <img class="mypageicon" src="../public/images/mypageicon.svg">
+<header>
+  <nav>
+    <div class="menu2">
+      <div class='top'></div>
+      <div class='middle'></div>
+      <div class='bottom'></div>
+    </div>
+    <div class="menu-box">
+      <div class="menu2-items">
+        <div class="item">Lorem</div>
+        <div class="item">Ipsum</div>
+        <div class="item">Magnam</div>
+        <div class="item">Quibusdam</div>
+        <div class="item">Nesciunt</div>
+        <div class="item">Dolor</div>
+        <div class="item">Amet</div>
+        <div class="item">Viverra</div>
+        <div class="item">Curabitur</div>
+        <div class="item">Porta</div>
+
       </div>
-    </nav>
-  </header>
+    </div>
 
-  <div class="container">
-      <table>
-          <tr>
-              <td>
-                  날짜
-                </td>
-                <td>
-                  <input type="text">
-                </td>
-          </tr>
-          <tr>
-              <td>
-                  장소
-                </td>
-                <td>
-                  <input type="text">
-                </td>
-          </tr>
-          <tr>
-              <td>
-                  가격
-                </td>
-                <td>
-                  <input type="text">
-                </td>
-          </tr>
-          <tr>
-            <td>
-              시간
-            </td>
-            <td>
-              <input type="text">
-            </td>
-          </tr>
-          <tr>
-            <td>
-              파일첨부
-            </td>
-            <td>
-              <input type="file">
-            </td>
-          </tr>
-          <tr>
-              <td valign = "top">소개글</td>
-              <td><textarea name="introduce" id="intro" cols="100" rows="20"></textarea></td>
-          </tr>
-          <tr>
-              <td colspan="2" style ="text-align: right">
-                <input type = "button" value = "확인">
-                <input type = "button" value = "취소"></td>
-          </tr>
-      </table>
-  </div>
+    <div class="logo_div">
+      
+    </div>
+
+    <div class="icons">
+      <img class="search" src="images/search.svg">
+      <img class="mypageicon" src="images/mypageicon.svg">
+    </div>
+  </nav>
+</header>
+
+<div class="container">
+  <form>
+    <div>
+      <label class="date">날짜</label>
+      <input type="date" value="date">
+    </div>
+    <div>
+      <label class="time">시간</label>
+      <input type="time" value="start">
+      <input type="time" value="end">
+    </div>
+    <div>
+      <label class="place">장소</label>
+      <input type="text">
+    </div>
+    <div>
+      <label class="price">티켓 가격</label>
+      <input type="text">원
+    </div>
+    <div>
+      <label class="file">파일첨부</label>
+      <input type="file" value="file">
+    </div>
+    <div>
+      <label class="article">소개글</label>
+      <textarea name="introduce" cols="100" rows="20"></textarea>
+    </div>
+    <div>
+      <input type="submit" value="제출">
+      <input type="button" value="취소">
+    </div>
+
+    <p>
+      이 게시글은 관리자 확인 후 승인되어 게시판에 게시됩니다.
+    </p>
+  </form>
+</div>
   
 
-
-  <footer>
-    footer
-  </footer>
-
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
-  <script type="text/javascript" src="js/menu.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="javascripts/bootstrap.js"></script>
+<script type="text/javascript" src="javascripts/menu2.js"></script>
 </body>
 </html>

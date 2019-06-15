@@ -39,11 +39,12 @@ function userInDB(userId){
   firebase.initializeApp(firebaseConfig);
   firebase.database().ref('users/'+userId).once('value').then(function(data) {
     if(data.val() == null){
-      return false;
+      flag = false;
     } else {
-      return true;
+      flag = true;
     }
   })
+  return flag;
 }
 
  module.exports ={

@@ -2,37 +2,58 @@
 <html>
 <head>
 	<title>CUE!</title>
-	<link rel="stylesheet" href="../public/stylesheets/bootstrap.css">
-  <link rel="stylesheet" href="../public/stylesheets/bootstrap-grid.css">
-  <link rel="stylesheet" href="../public/stylesheets/menu.css">
-  <link rel="stylesheet" href="../public/stylesheets/info_show.css">
+
+	<link rel="stylesheet" href="stylesheets/bootstrap.css">
+  <link rel="stylesheet" href="stylesheets/bootstrap-grid.css">
+  <link rel="stylesheet" href="stylesheets/menu3.css">
+  <link rel="stylesheet" href="stylesheets/info_show.css">
 </head>
 
 <body>
-  <header>
-    <nav>
-      <a class="menu-trigger" href="#">
-        <span></span>
-        <span></span>
-        <span></span>
-      </a>
-  
-      <img class="logo mx-auto d-block" src="../public/images/logo.png">
-      <div class="icons">
-        <img class="search" src="../public/images/search.svg">
-        <img class="mypageicon" src="../public/images/mypageicon.svg">
-      </div>
-    </nav>
-  </header>
+<header>
+  <nav>
+    <div class="menu2">
+      <div class='top'></div>
+      <div class='middle'></div>
+      <div class='bottom'></div>
+    </div>
+    <div class="menu-box">
+      <div class="menu2-items">
+        <div class="item">Lorem</div>
+        <div class="item">Ipsum</div>
+        <div class="item">Magnam</div>
+        <div class="item">Quibusdam</div>
+        <div class="item">Nesciunt</div>
+        <div class="item">Dolor</div>
+        <div class="item">Amet</div>
+        <div class="item">Viverra</div>
+        <div class="item">Curabitur</div>
+        <div class="item">Porta</div>
 
-  <div class="content">
+      </div>
+    </div>
+
+    <div class="logo_div">
+
+    </div>
+
+    <div class="icons">
+      <img class="search" src="images/search.svg">
+      <img class="mypageicon" src="images/mypageicon.svg">
+    </div>
+  </nav>
+</header>
+
+  <div class="container">
     <!--공연 제목-->
     <h1>데이터 불러오기</h1>
     <!--공연 요약 정보-->
     <div>
       <!--공연 사진 // 데이터에서 불러오기-->
       <div class = "poster">
-        <img src="../public/images/2.png"/>
+
+        <img src="images/2.png">
+
       </div>
       <div class = "summary">
         <table>
@@ -59,10 +80,12 @@
           </tr>
         </table>
       </div>
+      <div class = "reserve">
+        <input type="button" value="예약하기">
+      </div>
     </div>
-    <div class = "reserve">
-      <input type="button" value="예약하기">
-    </div>
+
+
     <!--공연 내용에 대한 세부 정보 및 탭-->
     <div class = "tab">
       <ul>
@@ -73,26 +96,37 @@
         <li>아티스트</li>
       </ul>
     </div>
-    <div class="info1">
-      각 탭에 맞는 데이터 불러오기
-      <img src="../public/images/3.png"/>
-      <div> </div>
+
+    <div class = "reserve">
+      <input type="button" value="예약하기">
     </div>
-    <div class="info2"></div>
-    <div class="info2"></div>
-    <div class="info1"></div>
-    <div class="info1"></div>
-    <div class="info1"></div>
+
+    <ul class="nav pills">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">상세정보</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">유의사항</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Q & A</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">일정</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">아티스트</a>
+      </li>
+    </ul>
+
+    <div class="info1">
+      <img src="images/3.png">
+
+    </div>
   </div>
 
-
-    <footer>
-      footer
-    </footer>
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/menu.js"></script>
-  </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="javascripts/bootstrap.js"></script>
+<script type="text/javascript" src="javascripts/menu2.js"></script>
+</body>
 </html>
