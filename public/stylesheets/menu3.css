@@ -22,10 +22,9 @@ nav{
 }
 
 .icons{
-  position: relative;
-  float: right;
-  margin: 20px;
-
+  top: 30px;
+  right: 30px;
+  position: absolute;
 }
 
 
@@ -47,7 +46,7 @@ nav{
   top: 30px;
   left: 30px;
   cursor: pointer;
-  z-index: 2 !important;
+  z-index: 9;
   transition: left 0.3s ease-in-out;
 }
 .menu2 div {
@@ -82,7 +81,7 @@ nav{
   height: 100%;
   color: #343838;
   opacity: 0;
-  z-index: 9 !important;
+  z-index: 1;
   transition: all 0.35s ease-in-out;
 }
 .menu-box.active {

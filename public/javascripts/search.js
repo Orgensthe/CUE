@@ -1,7 +1,7 @@
 $('.search').click(function(){
   $('.search-drawer').removeClass('s-closed').addClass('s-opened');
   $('.overlay').toggle();
-  $("#in-search").focus();
+  $(".in-search").focus();
 });
 
 $('.search-close, .overlay').click(function(){

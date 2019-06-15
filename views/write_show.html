@@ -7,11 +7,37 @@
   <link rel="stylesheet" href="stylesheets/bootstrap-grid.css">
   <link rel="stylesheet" href="stylesheets/menu3.css">
   <link rel="stylesheet" href="stylesheets/write_show.css">
+  <link rel="stylesheet" href="stylesheets/search.css">
 </head>
 
 <body>
 <header>
   <nav>
+    <div class="logo_div">
+    </div>
+
+    <div class="search-icon">
+      <img class="search" src="images/search.svg">
+    </div>
+    <div class="icons">
+      <img class="mypageicon" src="images/mypageicon.svg">
+    </div>
+
+    <div class="search-drawer shadow-bar s-closed">
+      <div class="search-tool">
+        <div id="search-nav">
+          <div class="search-close">X</div>
+        </div>
+        <div id="search-form">
+          <form>
+            <input class="in-search" type="text" name="s" value="" aria-required="false" autocomplete="on">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay"></div>
+
     <div class="menu2">
       <div class='top'></div>
       <div class='middle'></div>
@@ -29,17 +55,7 @@
         <div class="item">Viverra</div>
         <div class="item">Curabitur</div>
         <div class="item">Porta</div>
-
       </div>
-    </div>
-
-    <div class="logo_div">
-
-    </div>
-
-    <div class="icons">
-      <img class="search" src="images/search.svg">
-      <img class="mypageicon" src="images/mypageicon.svg">
     </div>
   </nav>
 </header>
@@ -86,5 +102,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="javascripts/bootstrap.js"></script>
 <script type="text/javascript" src="javascripts/menu2.js"></script>
+<script type="text/javascript" src="javascripts/search.js"></script>
 </body>
 </html>
