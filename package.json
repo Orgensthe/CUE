@@ -14,6 +14,8 @@
     "firebase-admin": "^8.1.0",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
+    "node-fpgrowth": "^1.2.1",
+    "nodeml": "^0.4.0",
     "pug": "2.0.0-beta11"
   }
 }

@@ -29,11 +29,16 @@ var makeSignUp = require('./routes/makeSignUp');
 var signup_creator = require('./routes/signup_creator');
 var login = require('./routes/login');
 var list = require('./routes/list');
+<<<<<<< HEAD
 var findUser = require('./routes/findUser');
 var board = require('./routes/board');
 var info_show = require('./routes/info_show');
 var mypage = require('./routes/mypage');
 var write_show = require('./routes/write_show');
+=======
+var findUser = require('./routes/findUser')
+var write_show = require('./routes/write_show')
+>>>>>>> yw
 
 
 
@@ -45,10 +50,15 @@ app.use('/signup_creator', signup_creator);
 app.use('/login', login);
 app.use('/list', list);
 app.use('/index', indexRouter);
+<<<<<<< HEAD
 app.use('/board', board);
 app.use('/info_show', info_show);
 app.use('/mypage', mypage);
 app.use('/write_show', write_show);
+=======
+app.use('/write_show', write_show);
+
+>>>>>>> yw
 
 
 

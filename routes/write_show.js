@@ -10,4 +10,5 @@ router.post('/', function(req, res, next) {
     res.render('write_show.html');
   });
 
+
 module.exports = router;
