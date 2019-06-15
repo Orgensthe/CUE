@@ -80,8 +80,9 @@ nav{
 }
 
 .search, .mypageicon{
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
+  margin: 10px;
 }
 
 .icons{
@@ -89,3 +90,29 @@ nav{
   right: 30px;
   position: absolute;
 }
+
+.main_back2{
+  padding: 0;
+  width: 1284px;
+  margin-top: 800px;
+  position: relative;
+}
+
+.container{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.magam{
+  z-index: 1;
+  margin-top: 1000px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%);
+
+
+}
+
+

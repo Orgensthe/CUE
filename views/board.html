@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CUE!</title>
+	<link rel="stylesheet" href="stylesheets/bootstrap.css">
+  <link rel="stylesheet" href="stylesheets/bootstrap-grid.css">
+  <link rel="stylesheet" href="stylesheets/menu.css">
+  <link rel="stylesheet" href="stylesheets/board.css">
+</head>
+
+<body>
+<header>
+  <nav>
+    <a class="menu-trigger" href="#">
+      <span></span>
+      <span></span>
+      <span></span>
+    </a>
+
+    <div class="logo_div">
+      <img class="logo_circle" src="/images/logo_circle.png">
+      <img class="logo" src="/images/logo.png">
+    </div>
+
+    <div class="icons">
+      <img class="search" src="images/search.svg">
+      <img class="mypageicon" src="images/mypageicon.svg">
+    </div>
+  </nav>
+</header>
+
+  <div class="container">
+    <!--게시글 목록-->
+    <div >
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>날짜</th>
+          </tr>
+        </thead>
+        <!--한 번에 몇 개의 글 보여줄지 정하기-->
+        <tbody>
+          <tr>
+            <td>DB</td>
+            <td>br까지 or 20글자</td>
+            <td>불러오기</td>
+            <td>
+              데이터
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!--페이징-->
+    <hr/>
+    <a class="btn btn-default pull-right">글쓰기</a>
+    <div class="text-center">
+      <ul class="pagination">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+      </ul>
+    </div>
+  </div>
+
+
+    <footer>
+      footer
+    </footer>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/bootstrap.js"></script>
+    <script type="text/javascript" src="javascripts/menu.js"></script>
+  </body>
+</html>
