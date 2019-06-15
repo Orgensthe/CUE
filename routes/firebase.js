@@ -32,18 +32,15 @@ function writeUserSearchLog(userId,searchValue) {
     });
   }
 
+var flag;
 
 function userInDB(userId){
-  var flag = true;
   firebase.database().ref('users/'+userId).once('value').then(function(data) {
     if(data.val() == null){
-      console.log(data.val());
       flag = false;
     } else {
-      console.log(data.val());
       flag = true;
     }
-    
   })
   return flag
 }
@@ -83,3 +80,4 @@ function login(id,pwd) {
   logIn:logIn,
   userCheck:userCheck
 };
+
