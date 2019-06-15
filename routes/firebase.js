@@ -30,17 +30,6 @@ function writeUserSearchLog(userId,searchValue) {
     });
   }
 
-  // var flag;
-  // function userInDB(userId){
-  //   firebase.database().ref('users/'+userId).once('value').then(function(data) {
-  //     if(data.val() == null){
-  //       flag = false;
-  //     } else {
-  //       flag = true;
-  //     }
-  //   })
-  //   return flag
-  // }
   function userInDB(userId) {
   // new Promise() 추가     
   var flag = false;
@@ -54,7 +43,7 @@ function writeUserSearchLog(userId,searchValue) {
       }
     })
   });
-}
+
 
 
   function loginActive(id,pwd) {
@@ -74,33 +63,49 @@ function writeUserSearchLog(userId,searchValue) {
   });
 }
 
+function writePhost(date,starttime,endtime,place,price,fileURL,introduce) {
+
+  var date64 =Buffer.from(date).toString('base64')
+  var starttime64 =Buffer.from(starttime).toString('base64')
+  var endtime64 =Buffer.from(endtime).toString('base64')
+  var fileURL64 =Buffer.from(fileURL).toString('base64')
+  var introduce64 =Buffer.from(introduce).toString('base64')
+  var place64 =Buffer.from(place).toString('base64')
+  var pricee64 =Buffer.from(price).toString('base64')
+
+
+    // Initialize Firebase
+    firebase.database().ref('phost/' + "email").set({
+      date: date64,
+      starttime : starttime64,
+      endtime:endtime64,
+      place: place64,
+      price:pricee64,
+      fileURL:fileURL64,
+      introduce:introduce64
+    });
+  }
 
 
 
 
 
+  function readPhost() {
+  // new Promise() 추가     
+  return new Promise(function (resolve, reject) {
+    resolve(firebase.database().ref('phost/'+"email").once('value').then(function phostData(data) {
+      return data.val()
+    })).then(value => value);
+  });
+}
 
 
-
-//   function userCheck(email) {
-//   // new Promise() 추가     
-//   return new Promise(function (resolve, reject) {
-//     resolve(userInDB(email)).then(value => value);
-//   });
-// }
-
-// function login(id,pwd) {
-//   // new Promise() 추가     
-//   return new Promise(function (resolve, reject) {
-//     resolve(loginActive(id,pwd)).then(value => value);
-//   });
-// }
 module.exports ={
   writeUserSearchLog:writeUserSearchLog,
   userSignIn:userSignIn,
   userInDB:userInDB,
   loginActive:loginActive,
-  // login:login,
-  // userCheck:userCheck
+  writePhost:writePhost,
+  readPhost:readPhost
 };
 

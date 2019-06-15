@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CUE!</title>
+
+  <link rel="stylesheet" href="stylesheets/bootstrap.css">
+  <link rel="stylesheet" href="stylesheets/bootstrap-grid.css">
+  <link rel="stylesheet" href="stylesheets/menu3.css">
+  <link rel="stylesheet" href="stylesheets/mypage.css">
+  <link rel="stylesheet" href="stylesheets/search.css">
+</head>
+
+<body>
+<header>
+  <nav>
+    <div class="logo_div">
+    </div>
+
+    <div class="icons">
+      <img class="search" src="images/search.svg">
+      <img class="mypageicon" src="images/mypageicon.svg">
+    </div>
+
+    <div class="search-drawer shadow-bar s-closed">
+      <form>
+        <select class="select">
+          <option value="all">전체</option>
+          <option value="genre">장르</option>
+          <option value="status">공연상태</option>
+          <option value="place">장소</option>
+        </select>
+        <input class="in-search" type="text" aria-required="false" autocomplete="on">
+        <input class="gosearch" type="image" src="images/search.svg" name="submit" value="submit">
+      </form>
+    </div>
+
+    <div class="overlay"></div>
+
+
+    <div class="menu2">
+      <div class='top'></div>
+      <div class='middle'></div>
+      <div class='bottom'></div>
+    </div>
+    <div class="menu-box">
+      <div class="menu2-items">
+        <div class="item">Lorem</div>
+        <div class="item">Ipsum</div>
+        <div class="item">Magnam</div>
+        <div class="item">Quibusdam</div>
+        <div class="item">Nesciunt</div>
+        <div class="item">Dolor</div>
+        <div class="item">Amet</div>
+        <div class="item">Viverra</div>
+        <div class="item">Curabitur</div>
+        <div class="item">Porta</div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="container">
+  <img class="mypage_text" src="images/mypage_text.png">
+  <div class="profile">
+    <div class="effect">
+      <img src="images/suzy.jpg" alt="프로필 사진" >
+      <!--노드로 넘기는건가,,,?-->
+    </div>
+    <div class="info">
+      <table>
+        <tr>
+          <td>이름 :</td>
+          <td>데이터에서 불러오기</td>
+        </tr>
+        <tr>
+          <td>회원 종류(개인/단체) :</td>
+          <td>데이터에서 불러오기</td>
+        </tr>
+        <tr>
+          <td>장르 :</td>
+          <td>데이터에서 불러오기</td>
+        </tr>
+        <tr>
+          <td>소개 :</td>
+          <td>데이터에서 불러오기</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class = "row">
+      <div class = "col-xs-4">
+        <div class = "card bright">
+          <div class = "card-body">
+            <p class = "card-text">팀 정보 수정</p>
+          </div>
+        </div>
+      </div>
+      <div class = "col-xs-4">
+        <div class = "card deep">
+          <div class = "card-body">
+            <p class = "card-text">공연 관리</p>
+          </div>
+        </div>
+      </div>
+      <div class = "col-xs-4">
+        <div class = "card bright">
+          <div class = "card-body">
+            <p class = "card-text">쿠폰 관리</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class = "row">
+      <div class = "col-xs-4">
+        <div class = "card deep">
+          <div class = "card-body">
+            <p class = "card-text">연동 계정 관리</p>
+          </div>
+        </div>
+      </div>
+      <div class = "col-xs-4">
+        <div class = "card bright">
+          <div class = "card-body">
+            <p class = "card-text">멤버 관리</p>
+          </div>
+        </div>
+      </div>
+      <div class = "col-xs-4">
+        <div class = "card deep">
+          <div class = "card-body">
+            <p class = "card-text"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="javascripts/bootstrap.js"></script>
+<script type="text/javascript" src="javascripts/menu2.js"></script>
+<script type="text/javascript" src="javascripts/search.js"></script>
+
+</body>
+</html>
