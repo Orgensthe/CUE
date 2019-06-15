@@ -23,46 +23,84 @@ function userSignIn(email,userName, password,phone,interest) {
   });
 }
 
-
-
 function writeUserSearchLog(userId,searchValue) {
     // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
     firebase.database().ref('searchLog/' + userId).set({
 
     });
   }
 
-
-function userInDB(userId){
-  var flag = true;
-  firebase.initializeApp(firebaseConfig);
-  firebase.database().ref('users/'+userId).once('value').then(function(data) {
-    if(data.val() == null){
-      flag = false;
-    } else {
-      flag = true;
-    }
-  })
-  return flag;
-}
-
-function logIn(userId,pwd){
-  var flag = true;
-  firebase.initializeApp(firebaseConfig);
-  firebase.database().ref('users/'+userId).once('value').then(function(data) {
-    if(data.val() == null){
-      if(data.val().password == pwd){
+  // var flag;
+  // function userInDB(userId){
+  //   firebase.database().ref('users/'+userId).once('value').then(function(data) {
+  //     if(data.val() == null){
+  //       flag = false;
+  //     } else {
+  //       flag = true;
+  //     }
+  //   })
+  //   return flag
+  // }
+  function userInDB(userId) {
+  // new Promise() 추가     
+  var flag = false;
+  return new Promise(function (resolve, reject) {
+    firebase.database().ref('users/'+ userId).once('value').then(function(data) {
+      if(data.val() == null){
         flag = true;
+        resolve(flag);
+      } else {
+        resolve(flag);
       }
-    } else {
-      flag = false;
-    }
-  })
-  return flag;   
+    })
+  });
 }
 
- module.exports ={
+
+  function loginActive(id,pwd) {
+  // new Promise() 추가     
+  var flag = false;
+  return new Promise(function (resolve, reject) {
+    firebase.database().ref('users/'+ id).once('value').then(function(data) {
+      if(data.val() != null && data.val().password == pwd){
+        console.log("he is user.");
+        flag = true;
+        resolve(flag);
+      } else {
+        console.log("he is not user.");
+        resolve(flag);
+      }
+    })
+  });
+}
+
+
+
+
+
+
+
+
+
+//   function userCheck(email) {
+//   // new Promise() 추가     
+//   return new Promise(function (resolve, reject) {
+//     resolve(userInDB(email)).then(value => value);
+//   });
+// }
+
+// function login(id,pwd) {
+//   // new Promise() 추가     
+//   return new Promise(function (resolve, reject) {
+//     resolve(loginActive(id,pwd)).then(value => value);
+//   });
+// }
+module.exports ={
   writeUserSearchLog:writeUserSearchLog,
-  userSignIn:userSignIn
+  userSignIn:userSignIn,
+  userInDB:userInDB,
+  loginActive:loginActive,
+  // login:login,
+  // userCheck:userCheck
 };
+

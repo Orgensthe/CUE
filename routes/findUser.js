@@ -7,18 +7,21 @@ var fb = require("./firebase");
 router.get('/', function(req, res, next) {
 	console.log(req.query.id);
 	console.log(req.query.password);
-
-	 var id = Buffer.from(req.query.id).toString('base64');
-	 var pwd = req.query.password;
-
-	if(fb.logIn(id,pwd)){
-
-	}else {
-
-	}
+	var id = Buffer.from(req.query.id).toString('base64');
+	var pwd = req.query.password;
+	console.log(id);
+	console.log(pwd);
 	
-	res.render('./index.html');
-
+	async function actionLogin(){
+		var flag = await fb.loginActive(id,pwd);
+		console.log("complete loginAction");
+		if(flag){
+			res.render('./index.html');
+		}else {
+			res.send('<script> alert("아이디 비밀번호를 확인해 주세요.");history.go(-1)</script>');
+		}
+	}
+	actionLogin();
 });
 
 module.exports = router;
