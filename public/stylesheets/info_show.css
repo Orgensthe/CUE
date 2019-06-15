@@ -39,7 +39,7 @@ input{
     height: 25%;
     display: inline-block;
     margin-left: 5%;
-    background-image: url(../images/4.png);
+    background-image: url(images/4.png);
     background-position: center;
 }
 .poster img{
@@ -53,26 +53,40 @@ input{
 .bg-lightgray{
     background-color: lightgray;
 }
-.nav > li{
-    display: inline;
-    margin-top: 12px;
-}
 .nav > li > a{
-    display: inline;
+    display: inline-block;
     color: black;
 }
-.pills{
-    height: 50px;
+.nav-pills{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    height: 45px;
+}
+.nav-pills > li + li{
+    margin: 0;
+}
+.nav-pills > li > a{
+    border-radius: 0;
+    width: 100%;
+}
+.nav-pills > li > a:hover{
+    background: transparent;
+    color: #f2f2f2;
+}
+.nav-pills > li.active > a{
+    background: transparent;
+}
+.nav-justified{
+    text-align: center;
 }
 .nav-item{
     font-size: 130%;
     font-weight: bold;
 }
-.nav-item:hover{
+.nav-pills > li:hover{
     background-color: #023759;
-    color: #f2f2f2;
 }
-.active {
+.nav > .active {
     color: #f2f2f2;
     background-color: #023759;
 }
