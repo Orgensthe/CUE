@@ -37,9 +37,10 @@ function userInDB(userId){
   var flag = true;
   firebase.database().ref('users/'+userId).once('value').then(function(data) {
     if(data.val() == null){
-      
+      console.log(data.val());
       flag = false;
     } else {
+      console.log(data.val());
       flag = true;
     }
     
@@ -47,16 +48,38 @@ function userInDB(userId){
   return flag
 }
 
+function loginActive(userId,pwd){
+  var flag = true;
+  firebase.initializeApp(firebaseConfig);
+  firebase.database().ref('users/'+userId).once('value').then(function(data) {
+    if(data.val() == null){
+      if(data.val().password == pwd){
+        flag = true;
+      }
+    } else {
+      flag = false;
+    }
+  })
+  return flag;   
+}
+
 function userCheck(email) {
-  // new Promise() 추가
+  // new Promise() 추가     
   return new Promise(function (resolve, reject) {
-      resolve( userInDB(email)).then(value => value);
+      resolve(userInDB(email)).then(value => value);
   });
 }
 
+function login(id,pwd) {
+  // new Promise() 추가     
+  return new Promise(function (resolve, reject) {
+      resolve(loginActive(id,pwd)).then(value => value);
+  });
+}
  module.exports ={
   writeUserSearchLog:writeUserSearchLog,
   userSignIn:userSignIn,
   userInDB:userInDB,
+  logIn:logIn,
   userCheck:userCheck
 };
