@@ -23,8 +23,6 @@ function userSignIn(email,userName, password,phone,interest) {
   });
 }
 
-
-
 function writeUserSearchLog(userId,searchValue) {
     // Initialize Firebase
     firebase.database().ref('searchLog/' + userId).set({
@@ -32,53 +30,47 @@ function writeUserSearchLog(userId,searchValue) {
     });
   }
 
-var flag;
-function userInDB(userId){
-  firebase.database().ref('users/'+userId).once('value').then(function(data) {
-    if(data.val() == null){
-      flag = false;
-    } else {
-      flag = true;
-    }
-  })
-  return flag
-}
-
-var flag2;
-function loginActive(id,pwd){
-  firebase.database().ref('users/'+ id).once('value').then(function(data) {
-    if(data.val() != null){
-      console.log(1);
-      if(data.val().password == pwd){
-        flag2 = true;
-        console.log(2);
+  var flag;
+  function userInDB(userId){
+    firebase.database().ref('users/'+userId).once('value').then(function(data) {
+      if(data.val() == null){
+        flag = false;
       } else {
-        console.log(3);
+        flag = true;
+      }
+    })
+    return flag
+  }
+
+  var flag2;
+  function loginActive(id,pwd){
+    firebase.database().ref('users/'+ id).once('value').then(function(data) {
+      if(data.val() != null && data.val().password == pwd){
+        console.log("he is user.");
+        flag2 = true;
+      } else {
+        console.log("he is not user.");
         flag2 = false;
       }
-    } else {
-      console.log(4);
-      flag2 = false;
-    }
-  })
-  console.log(flag2);
-  return flag2
-}
+    })
+    console.log(flag2);
+    return flag2
+  }
 
-function userCheck(email) {
+  function userCheck(email) {
   // new Promise() 추가     
   return new Promise(function (resolve, reject) {
-      resolve(userInDB(email)).then(value => value);
+    resolve(userInDB(email)).then(value => value);
   });
 }
 
 function login(id,pwd) {
   // new Promise() 추가     
   return new Promise(function (resolve, reject) {
-      resolve(loginActive(id,pwd)).then(value => value);
+    resolve(loginActive(id,pwd)).then(value => value);
   });
 }
- module.exports ={
+module.exports ={
   writeUserSearchLog:writeUserSearchLog,
   userSignIn:userSignIn,
   userInDB:userInDB,

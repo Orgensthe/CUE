@@ -38,7 +38,7 @@
 
 <div class="login center-block row">
   <div class="col-sm-6 user">
-    <form class="userlogin" action="/findUser" >
+    <form class="userlogin" action="/findUser" onsubmit='return formCheck()' >
       <input type="text" name="id" placeholder="ID" class="id"><br>
       <input type="password" name="password" placeholder="PASSWORD" class="password"><br>
       <input type="submit" value="LOGIN" class="log_in"><br>
@@ -60,5 +60,18 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="javascripts/bootstrap.js"></script>
 <script type="text/javascript" src="javascripts/menu.js"></script>
+<script>
+  function formCheck(){
+    var id = document.getElementsByName('id')[0].value;
+    var password = document.getElementsByName('password')[0].value;
+    
+    if(id.length === 0 || password.length === 0) {
+      alert("아이디 비밀번호를 모두 입력해 주세요.");
+      return false;
+    } else {
+      return true;
+    }
+  }
+</script>
 </body>
 </html>

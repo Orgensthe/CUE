@@ -14,6 +14,7 @@ router.get('/', function(req, res, next) {
 	
 	async function actionLogin(){
 		var flag = await fb.login(id,pwd);
+		console.log("complete loginAction");
 		if(flag){
 			res.send('<script> alert("아이디 비밀번호를 확인해 주세요.");history.go(-1)</script>');
 		}else {
