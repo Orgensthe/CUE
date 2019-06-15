@@ -7,27 +7,55 @@
   <link rel="stylesheet" href="stylesheets/bootstrap-grid.css">
   <!--  <link rel="stylesheet" href="css/bootstrap-reboot.css">-->
   <!--  <link rel="stylesheet" href="css/bootstrap-theme.css">-->
-  <link rel="stylesheet" href="stylesheets/menu.css">
+  <link rel="stylesheet" href="stylesheets/menu3.css">
   <link rel="stylesheet" href="stylesheets/signup.css">
+  <link rel="stylesheet" href="stylesheets/search.css">
 </head>
 <body>
 <header>
   <nav>
-    <a class="menu-trigger" href="#">
-      <span></span>
-      <span></span>
-      <span></span>
-    </a>
-
     <div class="logo_div">
-      <!--      <img class="logo mx-auto d-block" src="img/logo_nav.png">-->
     </div>
-
-
 
     <div class="icons">
       <img class="search" src="images/search.svg">
       <img class="mypageicon" src="images/mypageicon.svg">
+    </div>
+
+    <div class="search-drawer shadow-bar s-closed">
+      <form>
+        <select class="select">
+          <option value="all">전체</option>
+          <option value="genre">장르</option>
+          <option value="status">공연상태</option>
+          <option value="place">장소</option>
+        </select>
+        <input class="in-search" type="text" aria-required="false" autocomplete="on">
+        <input class="gosearch" type="image" src="images/search.svg" name="submit" value="submit">
+      </form>
+    </div>
+
+    <div class="overlay"></div>
+
+
+    <div class="menu2">
+      <div class='top'></div>
+      <div class='middle'></div>
+      <div class='bottom'></div>
+    </div>
+    <div class="menu-box">
+      <div class="menu2-items">
+        <div class="item">Lorem</div>
+        <div class="item">Ipsum</div>
+        <div class="item">Magnam</div>
+        <div class="item">Quibusdam</div>
+        <div class="item">Nesciunt</div>
+        <div class="item">Dolor</div>
+        <div class="item">Amet</div>
+        <div class="item">Viverra</div>
+        <div class="item">Curabitur</div>
+        <div class="item">Porta</div>
+      </div>
     </div>
   </nav>
 </header>
@@ -110,6 +138,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="javascripts/bootstrap.js"></script>
 <script type="text/javascript" src="javascripts/menu.js"></script>
+<script type="text/javascript" src="javascripts/menu2.js"></script>
+<script type="text/javascript" src="javascripts/search.js"></script>
 <script>
   function formCheck(){
     var email = document.getElementsByName('email')[0].value;
@@ -145,6 +175,7 @@
     }
   }
 </script>
+
 </body>
 </html>
 
