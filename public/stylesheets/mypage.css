@@ -43,7 +43,14 @@ p{
 .info td{
   padding: 10px;
 }
+<<<<<<< HEAD
 
+=======
+table{
+    border-collapse: separate;
+    border-spacing: 10px 10px;
+}
+>>>>>>> 98e1b4370fd4130358d97e1ee3e5e17b6f822494
 .card{
     margin: 0;
     color: aliceblue;
@@ -53,6 +60,7 @@ p{
     margin: 0;
     height: 100%;
     padding-top: 35%;
+    font-size: 130%;
 }
 .col-xs-4{
     margin: 0;
@@ -83,25 +91,67 @@ p{
     }
   }
 
+<<<<<<< HEAD
 
 
 
 
 
 
+=======
+#page-name{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+    text-shadow: 2px 2px 2px rgb(163, 163, 163);
+    font-weight: bold;
+}
 
-.bright{
+#profile{
+    padding-left: 1%;
+    margin-bottom: 5%;
+    margin-left: 15%;
+    margin-right: auto !important;
+}
+@media (min-width: 768px) {
+    #profile{
+      padding-left: 5%;
+    }
+  }
+  @media (min-width: 992px) {
+    #profile {
+        padding-left: 5%;
+    }
+  }
+  @media (min-width: 1200px) {
+    #profile {
+        padding-left: 10%;
+    }
+  }
+
+#info{
+    display: inline-block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-size: 130%;
+}
+#name{
+    font-weight: bold;
+}
+>>>>>>> 98e1b4370fd4130358d97e1ee3e5e17b6f822494
+
+#bright{
     background-color: #023759;
 }
-.bright:hover{
+#bright:hover{
     background-color: gray;
 }
-.bright:link{
+#bright:link{
     
 }
-.deep{
+#deep{
     background-color: #001625;
 }
-.deep:hover{
+#deep:hover{
     background-color: gray;
 }
