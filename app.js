@@ -30,6 +30,8 @@ var signup_creator = require('./routes/signup_creator');
 var login = require('./routes/login');
 var list = require('./routes/list');
 var findUser = require('./routes/findUser')
+var write_show = require('./routes/write_show')
+
 
 
 app.use('/', indexRouter);
@@ -40,6 +42,7 @@ app.use('/signup_creator', signup_creator);
 app.use('/login', login);
 app.use('/list', list);
 app.use('/index', indexRouter);
+app.use('/write_show', write_show);
 
 
 
