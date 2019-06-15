@@ -106,10 +106,11 @@ nav{
 
 .magam{
   z-index: 1;
-  margin-top: 1100px;
-  margin-right: auto;
-  margin-left: auto;
+  margin-top: 1000px;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%);
 
 
 }
