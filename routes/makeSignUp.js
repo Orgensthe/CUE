@@ -19,7 +19,7 @@ router.post('/', function(req, res, next) {
     if(fb.userInDB(email)){
     	console.log("fail");
     }else {
-    	fb.userSignIn(email,name,pw,phone,1)	
+    	fb.userSignIn(email,name,pw,phone,1)
     }
     res.render('./index.html')
 });

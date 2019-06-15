@@ -7,4 +7,5 @@ menu2.addEventListener("click", function() {
   menu2.classList.toggle("active");
   menuBox.classList.toggle("show");
   menuBox.classList.toggle("active");
+  menuBox.style.zIndex = 8;
 });

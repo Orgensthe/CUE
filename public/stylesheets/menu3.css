@@ -22,10 +22,9 @@ nav{
 }
 
 .icons{
-  position: relative;
-  float: right;
-  margin: 20px;
-
+  top: 30px;
+  right: 30px;
+  position: absolute;
 }
 
 

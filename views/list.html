@@ -16,10 +16,34 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="stylesheets/menu3.css">
   <link rel="stylesheet" href="stylesheets/list.css">
+  <link rel="stylesheet" href="stylesheets/search.css">
 </head>
 <body>
 <header>
   <nav>
+    <div class="logo_div">
+    </div>
+
+    <div class="icons">
+      <img class="search" src="images/search.svg">
+      <img class="mypageicon" src="images/mypageicon.svg">
+    </div>
+
+    <div class="search-drawer shadow-bar s-closed">
+      <form>
+        <select class="select">
+          <option value="all">전체</option>
+          <option value="genre">장르</option>
+          <option value="status">공연상태</option>
+          <option value="place">장소</option>
+        </select>
+        <input class="in-search" type="text" aria-required="false" autocomplete="on">
+        <input class="gosearch" type="image" src="images/search.svg" name="submit" value="submit">
+      </form>
+    </div>
+
+    <div class="overlay"></div>
+
 
     <div class="menu2">
       <div class='top'></div>
@@ -39,16 +63,6 @@
         <div class="item">Curabitur</div>
         <div class="item">Porta</div>
       </div>
-    </div>
-
-
-    <div class="logo_div">
-
-    </div>
-
-    <div class="icons">
-      <img class="search" src="images/search.svg">
-      <img class="mypageicon" src="images/mypageicon.svg">
     </div>
   </nav>
 </header>
@@ -135,5 +149,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="javascripts/bootstrap.js"></script>
 <script type="text/javascript" src="javascripts/menu2.js"></script>
+<script type="text/javascript" src="javascripts/search.js"></script>
 </body>
 </html>
