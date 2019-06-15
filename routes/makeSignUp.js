@@ -16,12 +16,6 @@ router.post('/', function(req, res, next) {
     var pw = req.body.password.toString()
     var phone =  req.body.phone.toString()
 
-<<<<<<< HEAD
-    if(fb.userInDB(email)){
-    	console.log("fail");
-    }else {
-    	fb.userSignIn(email,name,pw,phone,1)	
-=======
 
     async function local(){
         var flag = await fb.userCheck(email);
@@ -32,7 +26,6 @@ router.post('/', function(req, res, next) {
             fb.userSignIn();
             res.render('./index.html');
         } 
->>>>>>> yw
     }
     
     local();

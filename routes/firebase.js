@@ -41,11 +41,7 @@ function userInDB(userId){
       flag = true;
     }
   })
-<<<<<<< HEAD
-  return flag;
-=======
   return flag
->>>>>>> yw
 }
 
 var flag2;
@@ -82,12 +78,55 @@ function login(id,pwd) {
       resolve(loginActive(id,pwd)).then(value => value);
   });
 }
+
+
+function writePhost(date,starttime,endtime,place,price,fileURL,introduce) {
+
+    var date64 =Buffer.from(date).toString('base64')
+    var starttime64 =Buffer.from(starttime).toString('base64')
+    var endtime64 =Buffer.from(endtime).toString('base64')
+    var fileURL64 =Buffer.from(fileURL).toString('base64')
+    var introduce64 =Buffer.from(introduce).toString('base64')
+    var place64 =Buffer.from(place).toString('base64')
+    var pricee64 =Buffer.from(price).toString('base64')
+
+
+    // Initialize Firebase
+    firebase.database().ref('phost/' + "email").set({
+      date: date64,
+      starttime : starttime64,
+      endtime:endtime64,
+      place: place64,
+      price:pricee64,
+      fileURL:fileURL64,
+      introduce:introduce64
+    });
+ 
+}
+
+
+
+
+
+
+function readPhost() {
+  // new Promise() 추가     
+  return new Promise(function (resolve, reject) {
+      resolve(firebase.database().ref('phost/'+"email").once('value').then(function phostData(data) {
+        return data.val()
+        })).then(value => value);
+  });
+}
+
+
  module.exports ={
   writeUserSearchLog:writeUserSearchLog,
   userSignIn:userSignIn,
   userInDB:userInDB,
   loginActive:loginActive,
   login:login,
-  userCheck:userCheck
+  userCheck:userCheck,
+  writePhost:writePhost,
+  readPhost:readPhost
 };
 
