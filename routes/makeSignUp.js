@@ -19,10 +19,12 @@ router.post('/', function(req, res, next) {
 
     async function local(){
         var flag = await fb.userCheck(email);
+        await console.log(flag);
         if(flag){
             res.send('<script> alert("이미 회원가입 되어있는 이메일 입니다.");history.go(-1)</script>');
         }
         else{
+            fb.userSignIn();
             res.render('./index.html');
         } 
     }
