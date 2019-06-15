@@ -31,10 +31,18 @@
     <div class="search-drawer shadow-bar s-closed">
       <div class="search-tool">
         <div id="search-nav">
-          <div class="search-close">X</div>
+          <button type="button" class="search-close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         </div>
         <div id="search-form">
           <form>
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                검색조건
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#"></a>
+              </div>
+            </div>
             <input class="in-search" type="text" name="s" value="" aria-required="false" autocomplete="on">
           </form>
         </div>

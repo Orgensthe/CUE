@@ -53,6 +53,7 @@ body {
   z-index: 1;
   top: 35px;
   right: 50px;
+
 }
 
 
@@ -92,10 +93,10 @@ body {
 .in-search {
   margin: 0 auto;
   height: 50px;
-  width: 1000px;
+  width: 800px;
   position: relative;
   top: 10px;
-  left: 100px;
+  left: 250px;
   float:left;
   display: block;
   border: none;
@@ -112,25 +113,6 @@ body {
   outline: 0px;
 }
 
-/* Anything but Firefox and Internet Explorer 8 */
-@-moz-document url-prefix() {
-  .in-search {
-    height: 16px;
-    top: 15px;
-  }
-}
-
-@-webkit-keyframes autofill {
-  to {
-    color: #000;
-    background: white;
-  }
-}
-
-.in-search:-webkit-autofill {
-  -webkit-animation-name: autofill;
-  -webkit-animation-fill-mode: both;
-}
 
 /** SHADOW **/
 
@@ -139,84 +121,5 @@ body {
 }
 
 
-@media only screen and (max-width: 1410px){
-  #search-header {
-    right: 15px;
-  }
-
-  #search-close {
-    right: 10px;
-  }
-}
-
-@media only screen and (max-width: 912px){
-  #search-header {
-    right: 8px;
-    width: 80px;
-  }
-
-  #search-close {
-    right: 2px;
-  }
-
-  .in-search,.in-search:focus,
-  .in-search:valid {
-    width: 75%;
-  }
-}
-
-@media only screen and (max-width: 580px){
-  .in-search, .in-search:focus,
-  .in-search:valid {
-    width: 68%;
-  }
-}
-
-@media only screen and (max-width: 432px){
-  .in-search,.in-search:focus,
-  .in-search:valid {
-    width: 55%;
-  }
-
-  #search-header {
-    right: -4px;
-    width: 72px;
-    font-size: 17px;
-  }
-
-  #search-close {
-    right: 0px;
-  }
-}
-
-@media only screen and (max-width: 280px){
-
-  #search-close i {
-    font-size: 1.2rem;
-  }
-
-  #search-close {
-    right: -4px;
-  }
-
-  #search-header {
-    right: -8px;
-    width: 65px;
-    height: 21.5px;
-    font-size: 15px;
-  }
-
-  .in-search, .in-search:focus, .in-search:valid {
-    width: 50%;
-    margin-left: 10px;
-    top: 15px;
-  }
-
-  .in-search {
-    font-size: 1.2rem;
-    text-indent: 10px;
-    line-height: 10px;
-  }
-}
 
 

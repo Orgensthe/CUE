@@ -2,6 +2,21 @@ body{
   background-color: #f2f2f2;
 }
 
-.container{
-  margin: 100px;
+.container2{
+  margin: 200px;
 }
+
+label{
+  margin: 20px;
+  text-align: right;
+  width: 100px;
+}
+
+.container2 input{
+  border: none;
+  border-radius: 3px;
+  height: 40px;
+  width: 300px;
+}
+
+
