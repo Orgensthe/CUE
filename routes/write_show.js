@@ -32,7 +32,9 @@ router.post('/', upload.single('avatar'),  function(req, res, next) {
     if(req.file !== undefined){
       filname = req.file.originalname
     }
-    fb.writePhost(req.body.date,req.body.starttime,req.body.endtime,req.body.place,req.body.price, "images/"+filname,req.body.introduce)
+
+      //  나중에 write post에 넣을 이메일은 세션에서 유저 아이디 읽어서 넣는거로
+    fb.writePhost("name",req.body.date,req.body.starttime,req.body.endtime,req.body.place,req.body.price, "images/"+filname,req.body.introduce)
     res.redirect('/mypage');
   });
 
