@@ -178,6 +178,7 @@ module.exports ={
   writePhost:writePhost,
   readPhost:readPhost,
   readReserveByEmail:readReserveByEmail,
+  makeReservation:makeReservation,
   readPhostByDate:readPhostByDate
 };
 

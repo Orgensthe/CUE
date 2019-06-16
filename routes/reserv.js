@@ -24,12 +24,14 @@ router.get('/', function(req, res) {
 	async function doReserve(){
 		console.log(req.session.email);
 		var id = Buffer.from(req.session.email).toString('base64');
-		console.log("1");
 		var db = await fb.readPhost(req.session.show_id);
-		if(ParseInt(db.personLimit)-ParsInt(db.personNow) <=0){
-			
+		if(parseInt(db.personLimit)-parseInt(db.personNow) <=0){
+			req.session.reserve = false;
+			res.redirect(req.session.originalurl);
 		}else{
-			fb.makeReservation(id,req.session.show_id)
+			fb.makeReservation(id,req.session.show_id);
+			req.session.reserve = true;
+			res.redirect(req.session.originalurl);
 		}
 	}
 
