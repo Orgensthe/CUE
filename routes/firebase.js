@@ -1,4 +1,11 @@
 var firebase = require('firebase');
+require('date-utils');
+
+var dt = new Date();
+
+
+
+
 var firebaseConfig = {
   apiKey: "AIzaSyBHRZXwkFb180rpMnJeplhNC3p81vODvnQ",
   authDomain: "cuebd-a4ad1.firebaseapp.com",
@@ -87,6 +94,7 @@ function writePhost(date,starttime,endtime,place,price,fileURL,introduce) {
 
     // Initialize Firebase
     firebase.database().ref('phost/' + "email").set({
+      writedate:  Date.now().getUnixTime(),
       date: date64,
       starttime : starttime64,
       endtime:endtime64,
@@ -98,20 +106,6 @@ function writePhost(date,starttime,endtime,place,price,fileURL,introduce) {
  
 }
 
-function logIn(userId,pwd){
-  var flag = true;
-  firebase.initializeApp(firebaseConfig);
-  firebase.database().ref('users/'+userId).once('value').then(function(data) {
-    if(data.val() == null){
-      if(data.val().password == pwd){
-        flag = true;
-      }
-    } else {
-      flag = false;
-    }
-  })
-  return flag;   
-}
 
 
 
@@ -132,7 +126,6 @@ function readPhost() {
   userSignIn:userSignIn,
   userInDB:userInDB,
   loginActive:loginActive,
-  login:login,
   userCheck:userCheck,
   writePhost:writePhost,
   readPhost:readPhost
