@@ -20,17 +20,14 @@ router.get('/', function(req, res, next) {
     async function getname(isteam){
 
       var id = Buffer.from(req.session.email).toString('base64');
-      var username = await fb.getName(id) + "skjdhflakjsdhfl";
+      var username = await fb.getName(id);
       if(isteam == 1){
         await res.render('mypage_creator',{name:username});
 
-      }else{
-       
-        await res.render('mypage_creator',{name:username});
+      }else{     
+        await res.render('mypage',{name:username});
       }
- 
     }
-
     getname(req.session.isteam)
  
 
