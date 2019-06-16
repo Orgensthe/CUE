@@ -45,7 +45,14 @@ function writeUserSearchLog(userId,searchValue) {
   });
 }
 
-
+function getName(email){
+  return new Promise(function(resolve,reject){
+    firebase.database().ref('users/'+email).once('value').then(function(data){
+      console.log(data.val().name);
+      resolve(data.val().name);
+    })
+  }) 
+}
 
   function loginActive(id,pwd) {
   // new Promise() 추가     
@@ -106,6 +113,7 @@ module.exports ={
   userSignIn:userSignIn,
   userInDB:userInDB,
   loginActive:loginActive,
+  getName:getName,
   writePhost:writePhost,
   readPhost:readPhost
 };

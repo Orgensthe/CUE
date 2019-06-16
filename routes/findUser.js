@@ -1,27 +1,38 @@
 var express = require('express');
 var router = express.Router();
 var fb = require("./firebase");
+var session = require('express-session')
+var FileStore = require('session-file-store')(session)
+
+
+router.use(session({
+  secret: 'CUE_PROJECT',
+  resave: false,
+  saveUninitialized: true,
+  store:new FileStore()
+}))
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	console.log(req.query.id);
 	console.log(req.query.password);
-	var id = Buffer.from(req.query.id).toString('base64');
+	var email = req.query.id;
+	var id = Buffer.from(email).toString('base64');
 	var pwd = req.query.password;
-	console.log(id);
-	console.log(pwd);
 	
-	async function actionLogin(){
+	async function actionLogin(req,res,id){
 		var flag = await fb.loginActive(id,pwd);
-		console.log("complete loginAction");
 		if(flag){
-			res.render('./index.html');
+			req.session.is_logined = true;
+			req.session.email = email;
+			console.log(req.session);
+			res.render('index.html');
 		}else {
 			res.send('<script> alert("아이디 비밀번호를 확인해 주세요.");history.go(-1)</script>');
 		}
 	}
-	actionLogin();
+	actionLogin(req,res,id);
 });
 
 module.exports = router;
