@@ -30,8 +30,6 @@ function userSignIn(email,userName, password,phone,interest) {
   });
 }
 
-
-
 function writeUserSearchLog(userId,searchValue) {
     // Initialize Firebase
     firebase.database().ref('searchLog/' + userId).set({
@@ -39,43 +37,44 @@ function writeUserSearchLog(userId,searchValue) {
     });
   }
 
-var flag;
-function userInDB(userId){
-  firebase.database().ref('users/'+userId).once('value').then(function(data) {
-    if(data.val() == null){
-      flag = false;
-    } else {
-      flag = true;
-    }
-  })
-  return flag
-}
-
-var flag2;
-function loginActive(id,pwd){
-  firebase.database().ref('users/'+ id).once('value').then(function(data) {
-    if(data.val() != null){
-      console.log(1);
-      if(data.val().password == pwd){
-        flag2 = true;
-        console.log(2);
-      } else {
-        console.log(3);
-        flag2 = false;
-      }
-    } else {
-      console.log(4);
-      flag2 = false;
-    }
-  })
-  console.log(flag2);
-  return flag2
-}
-
-function userCheck(email) {
+  function userInDB(userId) {
   // new Promise() 추가     
+  var flag = false;
   return new Promise(function (resolve, reject) {
-      resolve(userInDB(email)).then(value => value);
+    firebase.database().ref('users/'+ userId).once('value').then(function(data) {
+      if(data.val() == null){
+        flag = true;
+        resolve(flag);
+      } else {
+        resolve(flag);
+      }
+    })
+  });
+}
+
+function getName(email){
+  return new Promise(function(resolve,reject){
+    firebase.database().ref('users/'+email).once('value').then(function(data){
+      console.log(data.val().name);
+      resolve(data.val().name);
+    })
+  }) 
+}
+
+function loginActive(id,pwd) {
+  // new Promise() 추가     
+  var flag = false;
+  return new Promise(function (resolve, reject) {
+    firebase.database().ref('users/'+ id).once('value').then(function(data) {
+      if(data.val() != null && data.val().password == pwd){
+        console.log("he is user.");
+        flag = true;
+        resolve(flag);
+      } else {
+        console.log("he is not user.");
+        resolve(flag);
+      }
+    })
   });
 }
 
@@ -107,8 +106,7 @@ function writePhost(email,date,starttime,endtime,place,price,fileURL,introduce) 
       fileURL:fileURL64,
       introduce:introduce64
     });
- 
-}
+  }
 
 
 
@@ -147,12 +145,12 @@ function readPhostByDate() {
 }
 
 
- module.exports ={
+module.exports ={
   writeUserSearchLog:writeUserSearchLog,
   userSignIn:userSignIn,
   userInDB:userInDB,
   loginActive:loginActive,
-  userCheck:userCheck,
+  getName:getName,
   writePhost:writePhost,
   readPhost:readPhost,
   readPhostByDate:readPhostByDate
