@@ -83,6 +83,11 @@ nav{
   background-color: #bbdbed;
 }
 
+.menu-box a:link, a:visited, a:active, a:hover{
+  text-decoration: none;
+  color: black;
+}
+
 
 .logo {
   width: 220px;
