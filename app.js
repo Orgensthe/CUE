@@ -37,7 +37,6 @@ var mypage = require('./routes/mypage');
 var mypage_creator = require('./routes/mypage_creator');
 var write_show = require('./routes/write_show');
 var list_search = require('./routes/list_search');
-var show_manage = require('./routes/show_manage');
 
 
 
@@ -55,7 +54,6 @@ app.use('/mypage', mypage);
 app.use('/mypage_creator',mypage_creator);
 app.use('/write_show', write_show);
 app.use('/list_search',list_search);
-app.use('/show_manage',show_manage);
 
 
 // catch 404 and forward to error handler
