@@ -35,6 +35,7 @@ var board = require('./routes/board');
 var info_show = require('./routes/info_show');
 var mypage = require('./routes/mypage');
 var mypage_creator = require('./routes/mypage_creator');
+var write_team = require('./routes/write_team');
 var write_show = require('./routes/write_show');
 var list_search = require('./routes/list_search');
 
@@ -52,6 +53,7 @@ app.use('/board', board);
 app.use('/info_show', info_show);
 app.use('/mypage', mypage);
 app.use('/mypage_creator',mypage_creator);
+app.use('/write_team',write_team);
 app.use('/write_show', write_show);
 app.use('/list_search',list_search);
 
