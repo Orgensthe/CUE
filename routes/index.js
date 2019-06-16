@@ -1,6 +1,17 @@
 var express = require('express');
 var router = express.Router();
 var fb = require("./firebase");
+var session = require('express-session')
+var FileStore = require('session-file-store')(session)
+
+
+
+router.use(session({
+  secret: 'CUE_PROJECT',
+  resave: false,
+  saveUninitialized: true,
+  
+}))
 
 
 var startchildDiv = ' <div class="col-md-4 col-xs-6">' 
@@ -15,8 +26,7 @@ var destinationurl = ''
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  
-  
+
   async function rend(){
     var resultDiv =''
     var db = await   fb.readPhostByDate();
@@ -25,7 +35,6 @@ router.get('/', function(req, res, next) {
       // fewer than two dinosaurs stored in the Database. It will also get fired
       // for every new, heavier dinosaur that gets added to the data set.
       snapshot.forEach(function(childSnapshot) {
-
 
         // key will be "ada" the first time and "alan" the second time
         var key = childSnapshot.key;
@@ -43,8 +52,15 @@ router.get('/', function(req, res, next) {
       
         console.log(resultDiv+"\n")
       }); 
+  
+      if(req.session.is_logined){
+        res.render('index',{di:resultDiv});
+      }else{
+        res.redirect('login')
+      }
+    
 
-      res.render('index',{di:resultDiv});
+     
 
     })
 
