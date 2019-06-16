@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b2ecd2e0-adda-4a3f-8d8a-291a02020abf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/public/javascripts/rating.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/rating.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/menu3.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/menu3.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/mypage.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/mypage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/stylesheets/star.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/star.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/info_show.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/info_show.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/mypage.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/mypage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/mypage_creator.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/mypage_creator.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/star.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/star.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -36,8 +29,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="46" lean-forward="true" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+            <state relative-caret-position="495">
+              <caret line="33" column="46" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -46,30 +39,25 @@
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="593">
-              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/stylesheets/star.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+              <caret line="72" selection-start-line="72" selection-end-line="72" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/stylesheets/star.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="720">
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/star.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="102" column="36" lean-forward="true" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
-              <folding>
-                <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#select#0;n#form#0;n#div#2;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#5;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="391">
+              <caret line="169" column="46" selection-start-line="169" selection-start-column="46" selection-end-line="169" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -77,8 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/rating.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="6" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+            <state relative-caret-position="60">
+              <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -97,19 +85,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
               <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/mypage_creator.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="536">
-              <caret line="130" column="33" selection-start-line="130" selection-start-column="33" selection-end-line="130" selection-end-column="33" />
-              <folding>
-                <element signature="n#select#0;n#form#0;n#div#2;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#5;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -142,12 +117,16 @@
       <find>body</find>
       <find>background-color: #f2f2f2;</find>
       <find>i</find>
-      <find>input</find>
       <find>#in-search</find>
       <find>file</find>
       <find>notice</find>
       <find>&lt;/span&gt;</find>
       <find>col-md-6</find>
+      <find>id</find>
+      <find>span</find>
+      <find>&lt;/input&gt;</find>
+      <find>input</find>
+      <find>&gt;</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -201,9 +180,9 @@
         <option value="$PROJECT_DIR$/public/stylesheets/mypage.css" />
         <option value="$PROJECT_DIR$/public/stylesheets/menu3.css" />
         <option value="$PROJECT_DIR$/views/mypage_creator.html" />
-        <option value="$PROJECT_DIR$/views/star.html" />
         <option value="$PROJECT_DIR$/public/javascripts/rating.js" />
         <option value="$PROJECT_DIR$/public/stylesheets/star.css" />
+        <option value="$PROJECT_DIR$/views/star.html" />
       </list>
     </option>
   </component>
@@ -315,7 +294,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46592000" />
+    <option name="totallyTimeSpent" value="48687000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="38" y="1" width="902" height="799" extended-state="0" />
@@ -626,15 +605,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="46" lean-forward="true" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+        <state relative-caret-position="495">
+          <caret line="33" column="46" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="593">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
         </state>
       </provider>
     </entry>
@@ -710,25 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/rating.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="6" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/star.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="102" column="36" lean-forward="true" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
-          <folding>
-            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#select#0;n#form#0;n#div#2;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#5;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/mypage.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -736,10 +696,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/rating.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/star.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+        <state relative-caret-position="720">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/star.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="169" column="46" selection-start-line="169" selection-start-column="46" selection-end-line="169" selection-end-column="46" />
         </state>
       </provider>
     </entry>
