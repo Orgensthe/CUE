@@ -84,7 +84,7 @@ function loginActive(id,pwd) {
 function writePhost(email,date,starttime,endtime,place,price,fileURL,introduce,limit) {
 
     var date64 =Buffer.from(date).toString('base64')
-    var email64 = Buffer.from(email).toString('base64')
+    var email64 = Buffer.from(email,'ascii').toString('base64')
     var starttime64 =Buffer.from(starttime).toString('base64')
     var endtime64 =Buffer.from(endtime).toString('base64')
     var fileURL64 =Buffer.from(fileURL).toString('base64')
@@ -98,7 +98,7 @@ function writePhost(email,date,starttime,endtime,place,price,fileURL,introduce,l
 
     console.log(email64+ writeDate64)
     firebase.database().ref('phost/'+email64+writeDate64).set({
-      email:email64,
+      email:email,
       date: date,
       starttime : starttime64,
       endtime:endtime64,
@@ -130,12 +130,10 @@ function readPhostByDate() {
   // new Promise() 추가     
   return new Promise(function (resolve, reject) {
     function readPhost(){
-      var snap;
       // Find the two heaviest dinosaurs.
-      var ref = firebase.database().ref("phost");   
+      var ref = firebase.database().ref("phost");
       return ref; 
     }
-
       resolve(
         readPhost()
         ).then(value => value);
