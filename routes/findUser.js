@@ -9,7 +9,6 @@ router.use(session({
   secret: 'CUE_PROJECT',
   resave: false,
   saveUninitialized: true,
-  store:new FileStore()
 }))
 
 
@@ -20,13 +19,13 @@ router.get('/', function(req, res, next) {
 	var pwd = req.query.password;
 
 
-	async function actionLogin(req,res,id){
+	async function actionLogin(request,response,id){
 		var flag = await fb.loginActive(id,pwd);
 		if(flag){
-			req.session.is_logined = true;
-			req.session.email = email;
-			req.session.save(function(){
-				res.redirect('/index');	
+			request.session.is_logined = true;
+			request.session.email = email;
+			request.session.save(function(){
+				response.redirect('index');	
 			});
 		}else {
 			res.send('<script> alert("아이디 비밀번호를 확인해 주세요.");history.go(-1)</script>');

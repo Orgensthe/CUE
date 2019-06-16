@@ -5,6 +5,12 @@ var session = require('express-session')
 var FileStore = require('session-file-store')(session)
 
 
+router.use(session({
+  secret: 'CUE_PROJECT',
+  resave: false,
+  saveUninitialized: true,
+}))
+
 var startchildDiv = ' <div class="col-md-4 col-xs-6">' 
 var preFixphostId ='<img src = "'
 var postFixphostId ='"'
@@ -18,10 +24,12 @@ var destinationurl = ''
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	console.log("im session");
-	console.log(req.session);
+  console.log(req.session);
+	
+
 try{
   async function rend(){	
-    var db = await   fb.readPhostByDate();
+    var db = await fb.readPhostByDate();
     await db.orderByChild("date").equalTo("2019-06-27").on("value", function read(snapshot) {
       // This callback will be triggered exactly two times, unless there are
       // fewer than two dinosaurs stored in the Database. It will also get fired
@@ -42,8 +50,6 @@ try{
             '</a>'
           +lastchildDiv)
 
-      
-        console.log(resultDiv+"\n")
       }); 
       res.render('index',{di:resultDiv});
     })
