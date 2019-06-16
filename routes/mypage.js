@@ -9,8 +9,7 @@ var fb = require("./firebase");
 router.use(session({
   secret: 'CUE_PROJECT',
   resave: false,
-  saveUninitialized: true,
-  
+  saveUninitialized: true
 }))
 
 
@@ -34,6 +33,7 @@ router.get('/', function(req, res, next) {
 
     getname(req.session.isteam)
  
+
   }else{
     req.session.originalurl = "mypage"
     res.redirect('login')

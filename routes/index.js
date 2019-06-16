@@ -20,7 +20,6 @@ var postFixphostId ='"'
 var hrefstring = 'href = "'
 var lastchildDiv= '</div>'
 var fileurl = ''
-
 var destinationurl = ''
 
 
@@ -51,9 +50,7 @@ router.get('/', function(req, res, next) {
 
       
         console.log(resultDiv+"\n")
-      }); 
-  
-    
+      });     
         res.render('index',{di:resultDiv});
   
 

@@ -132,13 +132,7 @@ function readPhostByDate() {
     function readPhost(){
       var snap;
       // Find the two heaviest dinosaurs.
-      var ref = firebase.database().ref("phost");
-  
-
-   
-  
-
-     
+      var ref = firebase.database().ref("phost");   
       return ref; 
     }
 

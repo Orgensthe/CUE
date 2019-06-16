@@ -38,6 +38,7 @@ var write_team = require('./routes/write_team');
 var write_show = require('./routes/write_show');
 var list_search = require('./routes/list_search');
 var star = require('./routes/star');
+var logout = require('./routes/logout')
 
 
 
@@ -56,7 +57,7 @@ app.use('/write_team',write_team);
 app.use('/write_show', write_show);
 app.use('/list_search',list_search);
 app.use('/star', star);
-
+app.use('/logout',logout);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
