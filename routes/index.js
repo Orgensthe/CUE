@@ -9,13 +9,16 @@ var postFixphostId ='"'
 var hrefstring = 'href = "'
 var lastchildDiv= '</div>'
 var fileurl = ''
-var resultDiv =''
+
 var destinationurl = ''
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  
+  
   async function rend(){
+    var resultDiv =''
     var db = await   fb.readPhostByDate();
     await db.orderByChild("date").equalTo("2019-06-27").on("value", function read(snapshot) {
       // This callback will be triggered exactly two times, unless there are
@@ -50,7 +53,10 @@ router.get('/', function(req, res, next) {
 
   }
 
-  rend();
+  rend(); 
+
+
+  
 });
 
 module.exports = router;
