@@ -23,7 +23,6 @@ router.get('/', function(req, res, next) {
       var username = await fb.getName(id);
       if(isteam == 1){
         await res.render('mypage_creator',{name:username});
-
       }else{     
         await res.render('mypage',{name:username});
       }
