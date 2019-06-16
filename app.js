@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-// 밑에는 라우트 파일 저런식으로 열면 라우트 파일이 연결됌
+// 밑에는 라우트 파일 저런식으로 열면 라우트 파일이 연결됨
 
 
 
@@ -33,6 +33,7 @@ var findUser = require('./routes/findUser');
 var board = require('./routes/board');
 var info_show = require('./routes/info_show');
 var mypage = require('./routes/mypage');
+var mypage_creator = require('./routes/mypage_creator');
 var write_show = require('./routes/write_show');
 var list_search = require('./routes/list_search');
 
@@ -49,6 +50,7 @@ app.use('/index', indexRouter);
 app.use('/board', board);
 app.use('/info_show', info_show);
 app.use('/mypage', mypage);
+app.use('/mypage_creator',mypage_creator);
 app.use('/write_show', write_show);
 app.use('/list_search',list_search);
 
