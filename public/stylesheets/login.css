@@ -14,7 +14,7 @@ form{
   /*float: left;*/
 }
 
-.id, .password, .log_in{
+.id, .password, .log_in,.log_out{
   margin-right: 30px;
   margin-left: 15px;
   margin-bottom: 20px;
@@ -23,15 +23,7 @@ form{
   background-color: #f2f2f2;
 }
 
-.id{
-  width: 18em;
-}
-
-.password{
-  width: 18em;
-}
-
-.log_in{
+.id, .password,.log_in, .log_out{
   width: 18em;
 }
 
