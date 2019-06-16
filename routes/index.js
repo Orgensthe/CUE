@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
   
   async function rend(){
     var resultDiv =''
-    var db = await   fb.readPhostByDate();
+    var db = await fb.readPhostByDate();
     await db.orderByChild("date").equalTo("2019-06-27").on("value", function read(snapshot) {
       // This callback will be triggered exactly two times, unless there are
       // fewer than two dinosaurs stored in the Database. It will also get fired
@@ -53,7 +53,7 @@ router.get('/', function(req, res, next) {
 
   }
 
-  rend(); 
+  rend();
 
 
   
