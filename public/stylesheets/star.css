@@ -26,6 +26,7 @@ img{
   float:left;
   text-indent: -9999px;
   cursor: pointer;
+
 }
 .starR2{
   background: url('http://miuu227.godohosting.com/images/icon/ico_review.png') no-repeat right 0;
@@ -45,3 +46,30 @@ img{
   margin: 30px;
 
 }
+
+.star-input>label{
+  width:30px;
+  height:0;
+  padding:28px 0 0 0;
+  overflow: hidden;
+  float:left;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.star-input>output{
+  display:inline-block;
+  width:60px;
+  font-size:18px;
+  text-align:right;
+  vertical-align:middle;
+}
+
+/*.star-input>input{*/
+/*  position:absolute;*/
+/*  width:1px;*/
+/*  height:1px;*/
+/*  opacity:0;*/
+/*}*/

@@ -9,8 +9,7 @@ var fb = require("./firebase");
 router.use(session({
   secret: 'CUE_PROJECT',
   resave: false,
-  saveUninitialized: true,
-  
+  saveUninitialized: true
 }))
 
 
@@ -21,19 +20,16 @@ router.get('/', function(req, res, next) {
     async function getname(isteam){
 
       var id = Buffer.from(req.session.email).toString('base64');
-      var username = await fb.getName(id) + "skjdhflakjsdhfl";
+      var username = await fb.getName(id);
       if(isteam == 1){
         await res.render('mypage_creator',{name:username});
-
-      }else{
-       
+      }else{     
         await res.render('mypage',{name:username});
       }
- 
     }
-
     getname(req.session.isteam)
  
+
   }else{
     req.session.originalurl = "mypage"
     res.redirect('login')

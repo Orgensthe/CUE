@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CUE!</title>
+  <link rel="stylesheet" href="stylesheets/bootstrap.css">
+  <link rel="stylesheet" href="stylesheets/bootstrap-grid.css">
+  <!--  <link rel="stylesheet" href="css/bootstrap-reboot.css">-->
+  <!--  <link rel="stylesheet" href="css/bootstrap-theme.css">-->
+  <link rel="stylesheet" href="stylesheets/menu3.css">
+  <link rel="stylesheet" href="stylesheets/signup.css">
+  <link rel="stylesheet" href="stylesheets/search.css">
+</head>
+<body>
+<header>
+  <nav>
+    <div class="logo_div">
+    </div>
+
+    <div class="icons">
+      <img class="search" src="images/search.svg">
+      <img class="mypageicon" src="images/mypageicon.svg">
+    </div>
+
+    <div class="search-drawer shadow-bar s-closed">
+      <form>
+        <select class="select">
+          <option value="all">전체</option>
+          <optgroup label="장르">
+            <option value="rock/band">락/밴드</option>
+            <option value="dance">댄스</option>
+            <option value="korean_music">국악</option>
+            <option value="korean_dance">한국무용</option>
+            <option value="play">연극</option>
+            <option value="exhibition">전시회</option>
+            <option value="movie">영화제</option>
+            <option value="rap/hiphop">랩/힙합</option>
+            <option value="etc">기타</option>
+          </optgroup>
+          <optgroup label="공연상태">
+            <option value="notyet">공연예정</option>
+            <option value="ing">공연중</option>
+            <option value="finish">공연마감</option>
+          </optgroup>
+          <optgroup label="장소">
+            <option value="gyeonggi/incheon">경기/인천</option>
+            <option value="seoul">서울</option>
+            <option value="chungcheong/daejeon">충청/대전</option>
+            <option value="jeolla/gwangju">전라/광주</option>
+            <option value="gyeongbuk/daegu">경북/대구</option>
+            <option value="gyeongnam/busan/ulsan">경남/부산/울산</option>
+            <option value="gangwon">강원</option>
+            <option value="jeju">제주</option>
+          </optgroup>
+        </select>
+        <input class="in-search" type="text" aria-required="false" autocomplete="on">
+        <input class="gosearch" type="image" src="images/search.svg" name="submit" value="submit">
+      </form>
+    </div>
+
+    <div class="overlay"></div>
+
+
+    <div class="menu2">
+      <div class='top'></div>
+      <div class='middle'></div>
+      <div class='bottom'></div>
+    </div>
+    <div class="menu-box">
+      <div class="menu2-items">
+        <a href="index"><div class="item">홈</div></a>
+        <a href="list"><div class="item">공연목록</div></a>
+        <a href="login"><div class="item">로그인</div></a>
+        <a href="mypage"><div class="item">마이페이지</div></a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="title">
+  <p>아티스트 회원가입</p>
+</div>
+<div class="container">
+  <form class="form-horizontal" action = "/signup_creator" method="POST">
+    <!--name-->
+    <div class="form-group">
+
+      <div class="">
+        <label class="">팀명</label>
+        <input type="text" name="name" placeholder="NAME" class="name" data-rule-reauired="true" maxlength="10">
+      </div>
+    </div>
+
+    <!--    email-->
+
+    <div class="form-group">
+
+      <div class="">
+        <label class="">팀 이메일</label>
+        <input type="email" name="email" placeholder="EMAIL" class="email" data-rule-reauired="true" maxlength="40">
+      </div>
+    </div>
+
+    <!--    password-->
+    <div class="form-group">
+
+      <div class="">
+        <label class="">비밀번호</label>
+        <input type="password" name="password" placeholder="PASSWORD" class="password" data-rule-reauired="true" maxlength="20">
+      </div>
+    </div>
+
+    <!--    password check-->
+    <div class="form-group">
+
+      <div class="">
+        <label class="">비밀번호 확인</label>
+        <input type="password" name="retype_pass" placeholder="RETYPE-PASSWORD" class="retype_pass" data-rule-reauired="true" maxlength="20">
+      </div>
+    </div>
+
+    <!--    phone-->
+    <div class="form-group">
+
+      <div class="">
+        <label class="">대표자 번호</label>
+        <input type="phone" name="phone" placeholder="PHONE" class="phone" data-rule-reauired="true">
+      </div>
+    </div>
+
+    <div class="form-group favorite">
+
+      <div class="">
+        <label class="">분야</label>
+        <input type="checkbox" name="rap/hiphop" value="랩/힙합">랩/힙합
+        <input type="checkbox" name="rock/band" value="락/밴드">락/밴드
+        <input type="checkbox" name="dance" value="댄스">댄스
+        <input type="checkbox" name="traditional_music" value="국악">국악
+        <input type="checkbox" name="traditional_dance" value="현대무용">현대무용
+        <input type="checkbox" name="play" value="연극">연극
+        <input type="checkbox" name="exhibition" value="전시회">전시회<br>
+        <input type="checkbox" name="movie" value="영화제">영화제
+        <input type="checkbox" name="etc" value="기타">기타
+      </div>
+    </div>
+    <div class="submit">
+        <div class="">
+            <input type="submit" value="SIGNUP" class="log_in"><br>
+        </div>
+      </div>
+  </form>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="javascripts/bootstrap.js"></script>
+<script type="text/javascript" src="javascripts/menu.js"></script>
+<script type="text/javascript" src="javascripts/menu2.js"></script>
+<script type="text/javascript" src="javascripts/search.js"></script>
+<script>
+  function formCheck(){
+    var email = document.getElementsByName('email')[0].value;
+    var name = document.getElementsByName('name')[0].value;
+    var password = document.getElementsByName('password')[0].value;
+    var retype_pass = document.getElementsByName('retype_pass')[0].value;
+    var phone = document.getElementsByName('phone')[0].value;
+    
+    if(email.length === 0) {
+      alert("입력란을 모두 입력해 주세요.");
+      return false;
+    } 
+    else if (name.length === 0){
+      alert("입력란을 모두 입력해 주세요.");
+      return false;
+    }
+    else if (password.length === 0){
+      alert("입력란을 모두 입력해 주세요.");
+      return false;
+    }
+    else if (retype_pass.length === 0){
+      alert("입력란을 모두 입력해 주세요.");
+      return false;
+    }
+    else if (phone.length === 0){
+      alert("입력란을 모두 입력해 주세요.");
+      return false;
+    } else if(password != retype_pass) {
+      alert("비밀번호를 확인해주세요.");
+      return false;
+    } else {
+      return true;
+    }
+  }
+</script>
+
+</body>
+</html>
+

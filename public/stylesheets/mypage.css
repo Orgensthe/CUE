@@ -58,9 +58,9 @@ p{
     height: 100%;
     cursor: pointer;
 }
-.card > a{
-  color: #f2f2f2;
-}
+/*.card > a{*/
+/*  color: #f2f2f2;*/
+/*}*/
 .card-body{
     margin: 0;
     height: 100%;
@@ -98,4 +98,9 @@ p{
 
 #name{
     font-weight: bold;
+}
+
+.card a:link, .card a:visited, .card a:active, .card a:hover{
+  text-decoration: none;
+  color: aliceblue;
 }
