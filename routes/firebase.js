@@ -163,7 +163,7 @@ function readReserveByEmail() {
       return ref; 
     }
       resolve(
-        readPhost()
+        readReserv()
         ).then(value => value);
   });
 }
