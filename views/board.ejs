@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CUE!</title>
+
+	<link rel="stylesheet" href="stylesheets/bootstrap.css">
+  <link rel="stylesheet" href="stylesheets/bootstrap-grid.css">
+  <link rel="stylesheet" href="stylesheets/menu3.css">
+  <link rel="stylesheet" href="stylesheets/board.css">
+  <link rel="stylesheet" href="stylesheets/search.css">
+</head>
+
+<body>
+<header>
+  <nav>
+    <div class="logo_div">
+    </div>
+
+    <div class="icons">
+      <img class="search" src="images/search.svg">
+      <img class="mypageicon" src="images/mypageicon.svg">
+    </div>
+
+    <div class="search-drawer shadow-bar s-closed">
+      <form>
+        <select class="select">
+          <option value="all">전체</option>
+          <optgroup label="장르">
+            <option value="rock/band">락/밴드</option>
+            <option value="dance">댄스</option>
+            <option value="korean_music">국악</option>
+            <option value="korean_dance">한국무용</option>
+            <option value="play">연극</option>
+            <option value="exhibition">전시회</option>
+            <option value="movie">영화제</option>
+            <option value="rap/hiphop">랩/힙합</option>
+            <option value="etc">기타</option>
+          </optgroup>
+          <optgroup label="공연상태">
+            <option value="notyet">공연예정</option>
+            <option value="ing">공연중</option>
+            <option value="finish">공연마감</option>
+          </optgroup>
+          <optgroup label="장소">
+            <option value="gyeonggi/incheon">경기/인천</option>
+            <option value="seoul">서울</option>
+            <option value="chungcheong/daejeon">충청/대전</option>
+            <option value="jeolla/gwangju">전라/광주</option>
+            <option value="gyeongbuk/daegu">경북/대구</option>
+            <option value="gyeongnam/busan/ulsan">경남/부산/울산</option>
+            <option value="gangwon">강원</option>
+            <option value="jeju">제주</option>
+          </optgroup>
+        </select>
+        <input class="in-search" type="text" aria-required="false" autocomplete="on">
+        <input class="gosearch" type="image" src="images/search.svg" name="submit" value="submit">
+      </form>
+    </div>
+
+    <div class="overlay"></div>
+
+
+    <div class="menu2">
+      <div class='top'></div>
+      <div class='middle'></div>
+      <div class='bottom'></div>
+    </div>
+    <div class="menu-box">
+      <div class="menu2-items">
+        <a href="index"><div class="item">홈</div></a>
+        <a href="list"><div class="item">공연목록</div></a>
+        <a href="login"><div class="item">로그인</div></a>
+        <a href="mypage"><div class="item">마이페이지</div></a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+  <div class="container">
+    <!--게시글 목록-->
+    <div >
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>날짜</th>
+          </tr>
+        </thead>
+        <!--한 번에 몇 개의 글 보여줄지 정하기-->
+        <tbody>
+          <tr>
+            <td>DB</td>
+            <td>br까지 or 20글자</td>
+            <td>불러오기</td>
+            <td>
+              데이터
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!--페이징-->
+    <hr/>
+    <form  action ='/write_show' method="GET">
+    <input type="submit" value="글쓰기"  class="btn btn-default pull-right">
+    </form>
+    <div class="text-center">
+      <ul class="pagination">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+      </ul>
+    </div>
+  </div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="javascripts/bootstrap.js"></script>
+<script type="text/javascript" src="javascripts/menu2.js"></script>
+<script type="text/javascript" src="javascripts/search.js"></script>
+
+</body>
+</html>
