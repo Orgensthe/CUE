@@ -78,21 +78,27 @@ function loginActive(id,pwd) {
   });
 }
 
-function writePhost(date,starttime,endtime,place,price,fileURL,introduce) {
-
-  var date64 =Buffer.from(date).toString('base64')
-  var starttime64 =Buffer.from(starttime).toString('base64')
-  var endtime64 =Buffer.from(endtime).toString('base64')
-  var fileURL64 =Buffer.from(fileURL).toString('base64')
-  var introduce64 =Buffer.from(introduce).toString('base64')
-  var place64 =Buffer.from(place).toString('base64')
-  var pricee64 =Buffer.from(price).toString('base64')
 
 
+function writePhost(email,date,starttime,endtime,place,price,fileURL,introduce) {
+
+    var date64 =Buffer.from(date).toString('base64')
+    var email64 = Buffer.from(email).toString('base64')
+    var starttime64 =Buffer.from(starttime).toString('base64')
+    var endtime64 =Buffer.from(endtime).toString('base64')
+    var fileURL64 =Buffer.from(fileURL).toString('base64')
+    var introduce64 =Buffer.from(introduce).toString('base64')
+    var place64 =Buffer.from(place).toString('base64')
+    var pricee64 =Buffer.from(price).toString('base64')
+
+    var writeDate = new Date().toTimeString()
+    var writeDate64 = Buffer.from(writeDate).toString('base64')
     // Initialize Firebase
-    firebase.database().ref('phost/' + "email").set({
-      writedate:  Date.now().getUnixTime(),
-      date: date64,
+
+    console.log(email64+ writeDate64)
+    firebase.database().ref('phost/'+email64+writeDate64).set({
+      email:email64,
+      date: date,
       starttime : starttime64,
       endtime:endtime64,
       place: place64,
@@ -107,12 +113,34 @@ function writePhost(date,starttime,endtime,place,price,fileURL,introduce) {
 
 
 
-  function readPhost() {
+function readPhost(id) {
   // new Promise() 추가     
   return new Promise(function (resolve, reject) {
-    resolve(firebase.database().ref('phost/'+"email").once('value').then(function phostData(data) {
-      return data.val()
-    })).then(value => value);
+      resolve(firebase.database().ref('phost/'+id).once('value').then(function phostData(data) {
+        return data.val()
+        })).then(value => value);
+  });
+}
+
+function readPhostByDate() {
+  // new Promise() 추가     
+  return new Promise(function (resolve, reject) {
+    function readPhost(){
+      var snap;
+      // Find the two heaviest dinosaurs.
+      var ref = firebase.database().ref("phost");
+  
+
+   
+  
+
+     
+      return ref; 
+    }
+
+      resolve(
+        readPhost()
+        ).then(value => value);
   });
 }
 
@@ -124,5 +152,7 @@ module.exports ={
   loginActive:loginActive,
   getName:getName,
   writePhost:writePhost,
-  readPhost:readPhost
+  readPhost:readPhost,
+  readPhostByDate:readPhostByDate
 };
+
