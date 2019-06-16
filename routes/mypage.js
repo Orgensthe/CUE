@@ -8,14 +8,14 @@ var FileStore = require('session-file-store')(session)
 router.use(session({
   secret: 'CUE_PROJECT',
   resave: false,
-  saveUninitialized: true,
-  
+  saveUninitialized: true
 }))
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   if(req.session.is_logined){
+  	req.session.originalurl = "mypage"
     res.render('mypage.html');
   }else{
     req.session.originalurl = "mypage"
