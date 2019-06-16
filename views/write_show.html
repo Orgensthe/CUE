@@ -77,31 +77,31 @@
 </header>
 
 <div class="container2">
-  <form>
+  <form action="/write_show" method="POST" enctype="multipart/form-data">
     <div>
       <label class="date">날짜</label>
-      <input type="date" value="date">
+      <input type="date" value="date" name="date">
     </div>
     <div>
       <label class="time">시간</label>
-      <input type="time" value="start">
-      <input type="time" value="end">
+      <input type="time" value="start" name="starttime">
+      <input type="time" value="end" name="endtime">
     </div>
     <div>
       <label class="place">장소</label>
-      <input type="text">
+      <input type="text" name="place">
     </div>
     <div>
       <label class="price">티켓 가격</label>
-      <input type="text">원
+      <input type="text" name="price">원
     </div>
     <div>
-      <label class="file">상세 이미지</label>
-      <input class="file_select" type="file" value="file">
+      <label class="file">파일첨부</label>
+      <input class="file" type="file" value="file" enctype="multipart/form-data"   name="avatar">
     </div>
     <div>
-      <label class="article">상세 텍스트</label>
-      <textarea name="introduce" cols="100" rows="15"></textarea>
+      <label class="article">소개글</label>
+      <textarea name="introduce" cols="100" rows="20" name="article"></textarea>
     </div>
     <div>
       <label class="article">유의사항</label>
@@ -123,5 +123,6 @@
 <script type="text/javascript" src="javascripts/bootstrap.js"></script>
 <script type="text/javascript" src="javascripts/menu2.js"></script>
 <script type="text/javascript" src="javascripts/search.js"></script>
+ 
 </body>
 </html>
