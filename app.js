@@ -38,12 +38,9 @@ var write_team = require('./routes/write_team');
 var write_show = require('./routes/write_show');
 var list_search = require('./routes/list_search');
 var star = require('./routes/star');
-<<<<<<< HEAD
 var show_manage = require('./routes/show_manage');
 
-=======
 var logout = require('./routes/logout')
->>>>>>> e6c8f6641db9f0163abd729aa4b9052889424bc6
 
 
 

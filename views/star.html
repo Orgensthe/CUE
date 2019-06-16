@@ -58,6 +58,7 @@
       </form>
     </div>
 
+    <%- div %>
     <div class="overlay"></div>
 
 
@@ -80,6 +81,7 @@
 <div class="container">
   <p>내가 본 공연</p>
   <div class="row">
+    <form action ="star" method="POST">
     <div class="col-md-4 col-xs-6">
       <img src="images/2.png">
       <div class="starRev star-input">
@@ -94,8 +96,11 @@
         <input type="radio" name="star-input" value="4.5" id="p4.5" class="starR1"><label for="p4.5">4.5</label>
         <input type="radio" name="star-input" value="5" id="p5" class="starR2"><label for="p5">5</label>
         <output for="star-input"><b>0</b>점</output>
+        <input type="submit">
       </div>
     </div>
+    
+    </form>
     <div class="col-md-4 col-xs-6">
       <img src="images/3.png">
       <div class="starRev">
