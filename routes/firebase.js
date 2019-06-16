@@ -19,14 +19,15 @@ firebase.initializeApp(firebaseConfig);
 
 
 
-function userSignIn(email,userName, password,phone,interest) {
+function userSignIn(email,userName, password,phone,interest,isteam) {
 
   // Initialize Firebase
   firebase.database().ref('users/' + email).set({
     name: userName,
     password : password,
     phone:phone,
-    interest: interest
+    interest: interest,
+    isteam:isteam
   });
 }
 
@@ -53,13 +54,15 @@ function writeUserSearchLog(userId,searchValue) {
 }
 
 function getName(email){
-  return new Promise(function(resolve,reject){
-    firebase.database().ref('users/'+email).once('value').then(function(data){
-      console.log(data.val().name);
-      resolve(data.val().name);
-    })
-  }) 
-}
+
+    // new Promise() 추가     
+    return new Promise(function (resolve, reject) {
+        resolve(firebase.database().ref('users/'+email).once('value').then(function phostData(data) {
+          return data.val().name
+          })).then(value => value);
+    });
+  }
+  
 
 function loginActive(id,pwd) {
   // new Promise() 추가     
@@ -67,12 +70,10 @@ function loginActive(id,pwd) {
   return new Promise(function (resolve, reject) {
     firebase.database().ref('users/'+ id).once('value').then(function(data) {
       if(data.val() != null && data.val().password == pwd){
-        console.log("he is user.");
         flag = true;
-        resolve(flag);
+        resolve([flag,data.val().isteam]);
       } else {
-        console.log("he is not user.");
-        resolve(flag);
+        resolve([flag]);
       }
     })
   });
@@ -80,7 +81,7 @@ function loginActive(id,pwd) {
 
 
 
-function writePhost(email,date,starttime,endtime,place,price,fileURL,introduce) {
+function writePhost(email,date,starttime,endtime,place,price,fileURL,introduce,limit) {
 
     var date64 =Buffer.from(date).toString('base64')
     var email64 = Buffer.from(email).toString('base64')
@@ -104,7 +105,10 @@ function writePhost(email,date,starttime,endtime,place,price,fileURL,introduce) 
       place: place64,
       price:pricee64,
       fileURL:fileURL64,
-      introduce:introduce64
+      introduce:introduce64,
+      personNow:0,
+      personLimit:limit
+
     });
   }
 
@@ -128,13 +132,7 @@ function readPhostByDate() {
     function readPhost(){
       var snap;
       // Find the two heaviest dinosaurs.
-      var ref = firebase.database().ref("phost");
-  
-
-   
-  
-
-     
+      var ref = firebase.database().ref("phost");   
       return ref; 
     }
 

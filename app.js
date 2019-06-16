@@ -30,7 +30,6 @@ var makeSignUp = require('./routes/makeSignUp');
 var signup_creator = require('./routes/signup_creator');
 var login = require('./routes/login');
 var list = require('./routes/list');
-var findUser = require('./routes/findUser');
 var board = require('./routes/board');
 var info_show = require('./routes/info_show');
 var mypage = require('./routes/mypage');
@@ -39,11 +38,11 @@ var write_team = require('./routes/write_team');
 var write_show = require('./routes/write_show');
 var list_search = require('./routes/list_search');
 var star = require('./routes/star');
+var logout = require('./routes/logout')
 
 
 
 app.use('/', indexRouter);
-app.use('/findUser', findUser);
 app.use('/signup', signup);
 app.use('/makeSignUp', makeSignUp);
 app.use('/signup_creator', signup_creator);
@@ -58,7 +57,7 @@ app.use('/write_team',write_team);
 app.use('/write_show', write_show);
 app.use('/list_search',list_search);
 app.use('/star', star);
-
+app.use('/logout',logout);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -22,8 +22,8 @@ router.post('/', function(req, res, next) {
         flag = await fb.userInDB(email);
         console.log("complete signupAction");
         if(flag){
-            fb.userSignIn(email,name,pw,phone,1);
-            res.render('./index.html');
+            fb.userSignIn(email,name,pw,phone,1,0);
+            res.redirect("index");
         }
         else{
             res.send('<script> alert("이미 회원가입 되어있는 이메일 입니다.");history.go(-1)</script>');
