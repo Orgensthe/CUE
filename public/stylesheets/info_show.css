@@ -17,16 +17,12 @@ table tr{
     margin-top: 5%;
 }
 input{
-    padding-top: 1.5%;
-    padding-bottom: 1.5%;
-    padding-left: 8%;
-    padding-right: 8%;
-    font-size: 130%;
     border: none;
     background-color: #023759;
     color: #f2f2f2;
-    margin-left: 30%;
+    font-weight: bold;
 }
+
 .container{
     text-align: center;
 }
@@ -52,12 +48,23 @@ input{
 .reserve{
     text-align: center;
 }
+.reserve > input{
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    padding-left: 8%;
+    padding-right: 8%;
+    font-size: 130%;
+    margin-left: 30%;
+}
 .bg-lightgray{
     background-color: lightgray;
 }
-.nav > li > a{
-    display: inline-block;
-    color: black;
+.nav-justified{
+    text-align: center;
+}
+.nav-item{
+    font-size: 130%;
+    font-weight: bold;
 }
 .nav-pills{
     margin-top: 2%;
@@ -66,6 +73,9 @@ input{
 }
 .nav-pills > li + li{
     margin: 0;
+}
+.nav-pills > li:hover{
+    background-color: #023759;
 }
 .nav-pills > li > a{
     border-radius: 0;
@@ -78,15 +88,9 @@ input{
 .nav-pills > li.active > a{
     background: transparent;
 }
-.nav-justified{
-    text-align: center;
-}
-.nav-item{
-    font-size: 130%;
-    font-weight: bold;
-}
-.nav-pills > li:hover{
-    background-color: #023759;
+.nav > li > a{
+    display: inline-block;
+    color: black;
 }
 .nav > .active {
     color: #f2f2f2;
@@ -95,4 +99,5 @@ input{
 .info1{
     clear: left;
     text-align: center;
+    font-size: 90%
 }
