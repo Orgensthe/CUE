@@ -6,4 +6,6 @@ router.get('/', function(req, res, next) {
   res.render('write_team.html');
 });
 
+
+
 module.exports = router;

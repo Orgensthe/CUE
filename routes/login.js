@@ -33,11 +33,13 @@ router.post('/', function(req, res, next) {
 	var pwd = req.body.password;
 
 	async function actionLogin(request,response,id){
-		var flag = await fb.loginActive(id,pwd);
-		if(flag){
+    var flag = await fb.loginActive(id,pwd);
+    
+		if(flag[0]){
 			request.session.is_logined = true;
       request.session.email = email;
-      console.log(request.session)
+      request.session.isteam = flag[1];
+
       response.redirect(request.session.originalurl);
 
     }else {

@@ -22,7 +22,7 @@ router.post('/', function(req, res, next) {
         flag = await fb.userInDB(email);
         console.log("complete signupAction");
         if(flag){
-            fb.userSignIn(email,name,pw,phone,1);
+            fb.userSignIn(email,name,pw,phone,1,0);
             res.render('./index.html');
         }
         else{

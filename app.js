@@ -30,7 +30,6 @@ var makeSignUp = require('./routes/makeSignUp');
 var signup_creator = require('./routes/signup_creator');
 var login = require('./routes/login');
 var list = require('./routes/list');
-var findUser = require('./routes/findUser');
 var board = require('./routes/board');
 var info_show = require('./routes/info_show');
 var mypage = require('./routes/mypage');
@@ -43,7 +42,6 @@ var star = require('./routes/star');
 
 
 app.use('/', indexRouter);
-app.use('/findUser', findUser);
 app.use('/signup', signup);
 app.use('/makeSignUp', makeSignUp);
 app.use('/signup_creator', signup_creator);
