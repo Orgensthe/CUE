@@ -69,7 +69,6 @@ nav{
 .menu-box .menu2-items {
   position: relative;
   width: 100%;
-  font-size: 1.5rem;
 }
 .menu-box .menu2-items .item {
   position: relative;
@@ -82,6 +81,11 @@ nav{
 .menu-box .menu2-items .item:hover {
   padding: 15px 50px;
   background-color: #bbdbed;
+}
+
+.menu-box a:link, a:visited, a:active, a:hover{
+  text-decoration: none;
+  color: black;
 }
 
 
@@ -139,9 +143,9 @@ nav{
   background-size: cover;
   padding: 0;
   width: 100%;
-  height: 1000px;
+  height: 1100px;
   background-repeat: no-repeat;
-  margin-top: 800px;
+  margin-top: 500px;
   position: absolute;
 }
 
@@ -154,8 +158,78 @@ nav{
 .row{
   text-align: center;
   position: absolute;
-  margin-top: 1100px;
+  margin-top: 900px;
 }
 
+/*--------------------------------------------*/
+/*카드 슬라이드 영역*/
+#main{
+  position: absolute;
+  top: 60%;
+  left: 38%;
+}
 
+#side1{
+  height: 400px;
+  width: 300px;
+  position: absolute;
+  transform: translateX(0px) scale(1.5);
+  z-index: 99;
+  transition: all .5s;
+}
 
+#side2{
+  height: 400px;
+  width: 300px;
+  position: absolute;
+  transform: translateX(-150px);
+  z-index: 9;
+  transition: all .5s;
+}
+
+#side3{
+  height: 400px;
+  width: 300px;
+  position: absolute;
+  transform: translateX(150px);
+  z-index: 9;
+  transition: all .5s;
+}
+
+#pre{
+  font-size: 50px;
+  color:white;
+  text-align: center;
+  line-height: 30px;
+  position: absolute;
+  top:100%;
+  left: 10%;
+}
+
+#pre:hover{
+  cursor: pointer;
+}
+
+#nex{
+  font-size: 50px;
+  color:white;
+  text-align: center;
+  line-height: 30px;
+  position: absolute;
+  top:100%;
+  right: 10%;
+}
+
+#nex:hover{
+  cursor: pointer;
+}
+
+#main img{
+  height: 100%;
+  width: 100%;
+}
+
+.image_slide{
+  position: relative;
+  height: 500px;
+}

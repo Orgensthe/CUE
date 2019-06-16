@@ -91,7 +91,7 @@ nav{
 .menu-box .menu2-items {
   position: relative;
   width: 100%;
-  font-size: 1.5rem;
+
 }
 .menu-box .menu2-items .item {
   position: relative;
@@ -104,4 +104,9 @@ nav{
 .menu-box .menu2-items .item:hover {
   padding: 15px 50px;
   background-color: #bbdbed;
+}
+
+.menu-box a:link, a:visited, a:active, a:hover{
+  text-decoration: none;
+  color: black;
 }
