@@ -28,7 +28,7 @@ router.get('/', function(req, res, next) {
 
   async function rend(){
     var resultDiv =''
-    var db = await   fb.readPhostByDate();
+    var db = await fb.readPhostByDate();
     await db.orderByChild("date").equalTo("2019-06-27").on("value", function read(snapshot) {
       // This callback will be triggered exactly two times, unless there are
       // fewer than two dinosaurs stored in the Database. It will also get fired
@@ -37,8 +37,6 @@ router.get('/', function(req, res, next) {
 
         // key will be "ada" the first time and "alan" the second time
         var key = childSnapshot.key;
-       
-
         // childData will be the actual contents of the child
         var childData = childSnapshot.val().date
         fileurl=Buffer.from(childSnapshot.val().fileURL, 'base64').toString('utf-8'),
@@ -47,7 +45,6 @@ router.get('/', function(req, res, next) {
               preFixphostId+fileurl+'" id="'+key+'">'+
             '</a>'
           +lastchildDiv)
-
       
         console.log(resultDiv+"\n")
       });     

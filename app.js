@@ -39,7 +39,8 @@ var write_show = require('./routes/write_show');
 var list_search = require('./routes/list_search');
 var star = require('./routes/star');
 var logout = require('./routes/logout')
-
+var revise_infor = require('./routes/revise_infor');
+var reserv = require('./routes/reserv');
 
 
 app.use('/', indexRouter);
@@ -58,7 +59,8 @@ app.use('/write_show', write_show);
 app.use('/list_search',list_search);
 app.use('/star', star);
 app.use('/logout',logout);
-
+app.use('/revise_infor',revise_infor);
+app.use('/reserv',reserv);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

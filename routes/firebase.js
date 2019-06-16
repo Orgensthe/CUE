@@ -20,7 +20,6 @@ firebase.initializeApp(firebaseConfig);
 
 
 function userSignIn(email,userName, password,phone,interest,isteam) {
-
   // Initialize Firebase
   firebase.database().ref('users/' + email).set({
     name: userName,
@@ -79,7 +78,15 @@ function loginActive(id,pwd) {
   });
 }
 
-
+function makeReservation(email,show_id) {
+  var writeDate = new Date().toTimeString()
+  var writeDate64 = Buffer.from(writeDate).toString('base64')
+  // Initialize Firebase
+  firebase.database().ref('reservation/' + email + writeDate64).set({
+    email : email,
+    show_id : show_id
+  });
+}
 
 function writePhost(email,date,starttime,endtime,place,price,fileURL,introduce,limit) {
 
@@ -91,7 +98,6 @@ function writePhost(email,date,starttime,endtime,place,price,fileURL,introduce,l
     var introduce64 =Buffer.from(introduce).toString('base64')
     var place64 =Buffer.from(place).toString('base64')
     var pricee64 =Buffer.from(price).toString('base64')
-
     var writeDate = new Date().toTimeString()
     var writeDate64 = Buffer.from(writeDate).toString('base64')
     // Initialize Firebase
@@ -114,9 +120,6 @@ function writePhost(email,date,starttime,endtime,place,price,fileURL,introduce,l
 
 
 
-
-
-
 function readPhost(id) {
   // new Promise() 추가     
   return new Promise(function (resolve, reject) {
@@ -135,7 +138,30 @@ function readPhostByDate() {
       var ref = firebase.database().ref("phost");   
       return ref; 
     }
+      resolve(
+        readPhost()
+        ).then(value => value);
+  });
+}
 
+function plusNowCount(id) {
+  // new Promise() 추가     
+  return new Promise(function (resolve, reject) {
+      resolve(firebase.database().ref('reservation/'+id).once('value').then(function phostData(data) {
+        return data.val()
+        })).then(value => value);
+  });
+}
+
+function readReserveByEmail() {
+  // new Promise() 추가     
+  return new Promise(function (resolve, reject) {
+    function readReserv(){
+      var snap;
+      // Find the two heaviest dinosaurs.
+      var ref = firebase.database().ref("reservation");   
+      return ref; 
+    }
       resolve(
         readPhost()
         ).then(value => value);
@@ -151,6 +177,7 @@ module.exports ={
   getName:getName,
   writePhost:writePhost,
   readPhost:readPhost,
+  readReserveByEmail:readReserveByEmail,
   readPhostByDate:readPhostByDate
 };
 
