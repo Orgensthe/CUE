@@ -15,19 +15,19 @@ router.use(session({
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	console.log(req.query.id);
-	console.log(req.query.password);
 	var email = req.query.id;
 	var id = Buffer.from(email).toString('base64');
 	var pwd = req.query.password;
-	
+
+
 	async function actionLogin(req,res,id){
 		var flag = await fb.loginActive(id,pwd);
 		if(flag){
 			req.session.is_logined = true;
 			req.session.email = email;
-			console.log(req.session);
-			res.render('index.html');
+			req.session.save(function(){
+				res.redirect('/index');	
+			});
 		}else {
 			res.send('<script> alert("아이디 비밀번호를 확인해 주세요.");history.go(-1)</script>');
 		}
