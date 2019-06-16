@@ -2,6 +2,8 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id" content="798106585852-4qu93ce21g68c13764f38eovfvp5l0hs.apps.googleusercontent.com">
   <title>CUE!</title>
   <link rel="stylesheet" href="stylesheets/bootstrap.css">
   <link rel="stylesheet" href="stylesheets/bootstrap-grid.css">
@@ -9,9 +11,8 @@
   <link rel="stylesheet" href="stylesheets/login.css">
   <link rel="stylesheet" href="stylesheets/search.css">
 
-  <meta name="google-signin-scope" content="profile email">
-  <meta name="google-signin-client_id" content="798106585852-4qu93ce21g68c13764f38eovfvp5l0hs.apps.googleusercontent.com">
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
 
 </head>
 <body>
@@ -79,6 +80,7 @@
   </nav>
 </header>
 
+<<<<<<< HEAD
 <div class="title">
   <p>LOGIN</p>
 </div>
@@ -93,15 +95,35 @@
     </form>
 
 <!--    로그인 되어 있을 때-->
+=======
+<div class="container">
+  <div class="title">
+    <p>LOGIN</p>
+>>>>>>> 62f132bf285d18f9149e2ad732f098e2c44e6c87
   </div>
 
-  <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+  <div class="login center-block row">
+    <div class="col-sm-6 user">
+      <form class="userlogin" action="/login" method="POST" >
+        <input type="text" name="id" placeholder="ID" class="id"><br>
+        <input type="password" name="password" placeholder="PASSWORD" class="password"><br>
+        <input type="submit" value="LOGIN" class="log_in"><br>
+        <input type="button" value="회원가입" class="signup">
+        <input type="button" value="아이디/비밀번호 찾기" class="forgot">
+      </form>
+      <!--    로그인 되어 있을 때-->
+    </div>
+
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+  </div>
 </div>
+
 
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="javascripts/bootstrap.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 <script type="text/javascript" src="javascripts/menu2.js"></script>
 <script type="text/javascript" src="javascripts/search.js"></script>
 <script type="text/javascript" src="javascripts/login.js"></script>

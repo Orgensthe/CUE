@@ -39,7 +39,7 @@ router.get('/', function(req, res, next) {
         var key = childSnapshot.key;
         // childData will be the actual contents of the child
         var childData = childSnapshot.val().date
-        fileurl=Buffer.from(childSnapshot.val().fileURL, 'base64').toString('utf-8'),
+        fileurl=Buffer.from(childSnapshot.val().fileURL,'base64').toString('ascii'),
         resultDiv += (startchildDiv+ 
             '<a href="info_show?id='+key+'">'+
               preFixphostId+fileurl+'" id="'+key+'">'+
@@ -60,7 +60,7 @@ router.get('/', function(req, res, next) {
 
   }
 
-  rend(); 
+  rend();
 
 
   

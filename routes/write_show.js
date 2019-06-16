@@ -33,8 +33,12 @@ router.post('/', upload.single('avatar'),  function(req, res, next) {
       filname = req.file.originalname
     }
 
+    var id = Buffer.from(req.session.email).toString('base64');
+
+    console.log("images/"+filname);
+    console.log(id + "team make show card")
       //  나중에 write post에 넣을 이메일은 세션에서 유저 아이디 읽어서 넣는거로
-    fb.writePhost("name",req.body.date,req.body.starttime,
+    fb.writePhost(id,req.body.date,req.body.starttime,
       req.body.endtime,req.body.place,req.body.price, 
       "images/"+filname,req.body.introduce,req.body.limit)
     res.redirect('/mypage');

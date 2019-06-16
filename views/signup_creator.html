@@ -77,10 +77,11 @@
   </nav>
 </header>
 
-<div class="title">
-  <p>아티스트 회원가입</p>
-</div>
+
 <div class="container">
+  <div class="title">
+    <p>아티스트 회원가입</p>
+  </div>
   <form class="form-horizontal" action = "/signup_creator" method="POST">
     <!--name-->
     <div class="form-group">
@@ -129,7 +130,6 @@
     </div>
 
     <div class="form-group favorite">
-
       <div class="">
         <label class="">분야</label>
         <input type="checkbox" name="rap/hiphop" value="랩/힙합">랩/힙합
@@ -143,11 +143,10 @@
         <input type="checkbox" name="etc" value="기타">기타
       </div>
     </div>
+
     <div class="submit">
-        <div class="">
-            <input type="submit" value="SIGNUP" class="log_in"><br>
-        </div>
-      </div>
+      <input type="submit" value="SIGNUP" class="log_in">
+    </div>
   </form>
 </div>
 

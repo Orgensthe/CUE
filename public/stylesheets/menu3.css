@@ -1,6 +1,9 @@
 nav{
   background: #001625;
   height: 100px;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
 }
 
 .logo_div{
@@ -26,10 +29,6 @@ nav{
   right: 30px;
   position: absolute;
 }
-
-
-
-
 
 * {
   box-sizing: border-box;

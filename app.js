@@ -38,6 +38,8 @@ var write_team = require('./routes/write_team');
 var write_show = require('./routes/write_show');
 var list_search = require('./routes/list_search');
 var star = require('./routes/star');
+var show_manage = require('./routes/show_manage');
+
 var logout = require('./routes/logout')
 var revise_infor = require('./routes/revise_infor');
 var reserv = require('./routes/reserv');
@@ -58,6 +60,9 @@ app.use('/write_team',write_team);
 app.use('/write_show', write_show);
 app.use('/list_search',list_search);
 app.use('/star', star);
+app.use('/show_manage', show_manage);
+
+
 app.use('/logout',logout);
 app.use('/revise_infor',revise_infor);
 app.use('/reserv',reserv);
