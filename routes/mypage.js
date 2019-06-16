@@ -27,7 +27,7 @@ router.get('/', function(req, res, next) {
 
       }else{
        
-        await res.render('mypage_creator',{name:username});
+        await res.render('mypage',{name:username});
       }
  
     }
