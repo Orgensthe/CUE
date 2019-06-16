@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
 
 /* GET home page. */
 router.post('/', function(req, res, next) {
+  console.log(req.body);
   res.render('star.html');
 });
 module.exports = router;
