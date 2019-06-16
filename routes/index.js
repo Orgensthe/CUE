@@ -53,12 +53,9 @@ router.get('/', function(req, res, next) {
         console.log(resultDiv+"\n")
       }); 
   
-      if(req.session.is_logined){
-        res.render('index',{di:resultDiv});
-      }else{
-        res.redirect('login')
-      }
     
+        res.render('index',{di:resultDiv});
+  
 
      
 

@@ -18,6 +18,7 @@ router.get('/', function(req, res, next) {
   if(req.session.is_logined){
     res.render('mypage.html');
   }else{
+    req.session.originalurl = "mypage"
     res.redirect('login')
   }
 });

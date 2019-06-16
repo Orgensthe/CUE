@@ -21,14 +21,14 @@ router.get('/', function(req, res, next) {
 	var email = req.query.id;
 	var id = Buffer.from(email).toString('base64');
 	var pwd = req.query.password;
-	console.log(req.session + "asdjfaskdjfajksdfajkshdf")
+	console.log(req)
 
 	async function actionLogin(request,response,id){
 		var flag = await fb.loginActive(id,pwd);
 		if(flag){
 			request.session.is_logined = true;
 			request.session.email = email;
-			request.redirect('back')
+			response.redirect()
 		}else {
 			res.send('<script> alert("아이디 비밀번호를 확인해 주세요.");history.go(-1)</script>');
 		}
