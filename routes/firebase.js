@@ -1,4 +1,11 @@
 var firebase = require('firebase');
+require('date-utils');
+
+var dt = new Date();
+
+
+
+
 var firebaseConfig = {
   apiKey: "AIzaSyBHRZXwkFb180rpMnJeplhNC3p81vODvnQ",
   authDomain: "cuebd-a4ad1.firebaseapp.com",
@@ -54,7 +61,7 @@ function getName(email){
   }) 
 }
 
-  function loginActive(id,pwd) {
+function loginActive(id,pwd) {
   // new Promise() 추가     
   var flag = false;
   return new Promise(function (resolve, reject) {
@@ -84,6 +91,7 @@ function writePhost(date,starttime,endtime,place,price,fileURL,introduce) {
 
     // Initialize Firebase
     firebase.database().ref('phost/' + "email").set({
+      writedate:  Date.now().getUnixTime(),
       date: date64,
       starttime : starttime64,
       endtime:endtime64,
@@ -93,6 +101,7 @@ function writePhost(date,starttime,endtime,place,price,fileURL,introduce) {
       introduce:introduce64
     });
   }
+
 
 
 

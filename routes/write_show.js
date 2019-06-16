@@ -26,9 +26,13 @@ router.get('/', function(req, res, next) {
   res.render('write_show.html');
 });
 
+
 router.post('/', upload.single('avatar'),  function(req, res, next) {
-    console.log(req.file.originalname)
-    fb.writePhost(req.body.date,req.body.starttime,req.body.endtime,req.body.place,req.body.price, "images/"+req.file.originalname,req.body.introduce)
+    var filname = ""
+    if(req.file !== undefined){
+      filname = req.file.originalname
+    }
+    fb.writePhost(req.body.date,req.body.starttime,req.body.endtime,req.body.place,req.body.price, "images/"+filname,req.body.introduce)
     res.redirect('/mypage');
   });
 
