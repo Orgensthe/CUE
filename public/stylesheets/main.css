@@ -7,59 +7,83 @@ body {
 nav{
   position: relative;
 }
-.menu-trigger {
-  margin: 30px;
-  float: left;
-}
-.menu-trigger,
-.menu-trigger span {
-  display: inline-block;
-  transition: all .4s;
+
+* {
   box-sizing: border-box;
 }
-
-.menu-trigger {
-  position: relative;
-  width: 30px;
-  height: 22px;
+.show {
+  opacity: 1 !important;
 }
-
-.menu-trigger span {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #fff;
-  border-radius: 4px;
+.hide {
+  opacity: 0 !important;
 }
+/* ========== MENU2 ========== */
+.menu2 {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  cursor: pointer;
+  z-index: 9;
+  transition: left 0.3s ease-in-out;
 
-.menu-trigger span:nth-of-type(1) {
-  top: 0;
 }
-
-.menu-trigger span:nth-of-type(2) {
-  top: 10px;
+.menu2 div {
+  background-color: white;
+  width: 35px;
+  height: 3px;
+  margin-bottom: 8px;
+  transition: opacity 0.5s, background-color 0.25s, transform 0.5s ease-in-out;
 }
-
-.menu-trigger span:nth-of-type(3) {
-  bottom: 0;
+.menu2.active {
+  left: 250px;
 }
-
-/* type-01 */
-/* 중앙 라인이 고정된 자리에서 투명하게 사라지며 상하라인 회전하며 엑스자 만들기 */
-.menu-trigger.active-1 span:nth-of-type(1) {
-  -webkit-transform: translateY(10px) rotate(-45deg);
-  transform: translateY(10px) rotate(-45deg);
+.menu2.active div {
+  background-color: #343838;
 }
-
-.menu-trigger.active-1 span:nth-of-type(2) {
+.menu2.active .top {
+  transform: translateY(8px) rotate(-135deg);
+}
+.menu2.active .middle {
   opacity: 0;
 }
-
-.menu-trigger.active-1 span:nth-of-type(3) {
-  -webkit-transform: translateY(-10px) rotate(45deg);
-  transform: translateY(-10px) rotate(45deg);
+.menu2.active .bottom {
+  transform: translateY(-14px) rotate(-45deg);
 }
+.menu-box {
+  position: fixed;
+  top: 0px;
+  right: -300px;
+  background-color: rgb(255,246,255);
+  padding: 60px;
+  width: 300px;
+  height: 100%;
+  color: #343838;
+  opacity: 0;
+  z-index: 1;
+  transition: all 0.35s ease-in-out;
+}
+.menu-box.active {
+  left: 0px;
+  opacity: 1;
+}
+.menu-box .menu2-items {
+  position: relative;
+  width: 100%;
+  font-size: 1.5rem;
+}
+.menu-box .menu2-items .item {
+  position: relative;
+  cursor: pointer;
+  padding: 15px 40px;
+  transition: all 0.25s;
+  width: 300px;
+  right: 60px;
+}
+.menu-box .menu2-items .item:hover {
+  padding: 15px 50px;
+  background-color: #bbdbed;
+}
+
 
 .logo {
   width: 220px;
@@ -80,8 +104,9 @@ nav{
 }
 
 .search, .mypageicon{
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
+  margin: 10px;
 }
 
 .icons{
@@ -89,3 +114,48 @@ nav{
   right: 30px;
   position: absolute;
 }
+
+
+
+.container{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  position: relative;
+}
+
+.magam{
+  z-index: 1;
+  margin-top: 1000px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%);
+
+}
+
+.magam_back{
+  background-image: url("../images/main_back2.png");
+  background-size: cover;
+  padding: 0;
+  width: 100%;
+  height: 1000px;
+  background-repeat: no-repeat;
+  margin-top: 800px;
+  position: absolute;
+}
+
+.row img{
+  margin: 10px;
+  width: 200px;
+  height: 300px;
+}
+
+.row{
+  text-align: center;
+  position: absolute;
+  margin-top: 1100px;
+}
+
+
+

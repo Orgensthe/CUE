@@ -1,0 +1,107 @@
+nav{
+  background: #001625;
+  height: 100px;
+}
+
+.logo_div{
+  width: 100%;
+  height: 110px;
+  background-image: url("../images/logo_nav.png");
+  background-size: 150px;
+  background-repeat: no-repeat;
+  background-position: center;
+  /*float: left;*/
+  position: absolute;
+}
+
+
+.search, .mypageicon{
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+}
+
+.icons{
+  top: 30px;
+  right: 30px;
+  position: absolute;
+}
+
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+.show {
+  opacity: 1 !important;
+}
+.hide {
+  opacity: 0 !important;
+}
+/* ========== MENU2 ========== */
+.menu2 {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  cursor: pointer;
+  z-index: 9;
+  transition: left 0.3s ease-in-out;
+}
+.menu2 div {
+  background-color: white;
+  width: 35px;
+  height: 3px;
+  margin-bottom: 8px;
+  transition: opacity 0.5s, background-color 0.25s, transform 0.5s ease-in-out;
+}
+.menu2.active {
+  left: 250px;
+}
+.menu2.active div {
+  background-color: #343838;
+}
+.menu2.active .top {
+  transform: translateY(8px) rotate(-135deg);
+}
+.menu2.active .middle {
+  opacity: 0;
+}
+.menu2.active .bottom {
+  transform: translateY(-14px) rotate(-45deg);
+}
+.menu-box {
+  position: fixed;
+  top: 0px;
+  right: -300px;
+  background-color: rgb(255,246,255);
+  padding: 60px;
+  width: 300px;
+  height: 100%;
+  color: #343838;
+  opacity: 0;
+  z-index: 1;
+  transition: all 0.35s ease-in-out;
+}
+.menu-box.active {
+  left: 0px;
+  opacity: 1;
+}
+.menu-box .menu2-items {
+  position: relative;
+  width: 100%;
+  font-size: 1.5rem;
+}
+.menu-box .menu2-items .item {
+  position: relative;
+  cursor: pointer;
+  padding: 15px 40px;
+  transition: all 0.25s;
+  width: 300px;
+  right: 60px;
+}
+.menu-box .menu2-items .item:hover {
+  padding: 15px 50px;
+  background-color: #bbdbed;
+}

@@ -2504,7 +2504,7 @@ input[type="checkbox"] {
   line-height: normal;
 }
 input[type="file"] {
-  display: block;
+  /*display: block;*/
 }
 input[type="range"] {
   display: block;

@@ -19,10 +19,9 @@ router.post('/', function(req, res, next) {
 
     async function local(){
         var flag;
-        flag = await fb.userCheck(email);
+        flag = await fb.userInDB(email);
         console.log("complete signupAction");
-        console.log("flag is " + flag);
-        if(flag === false){
+        if(flag){
             fb.userSignIn(email,name,pw,phone,1);
             res.render('./index.html');
         }
@@ -33,7 +32,6 @@ router.post('/', function(req, res, next) {
     
     local();
     
-
 });
 
 module.exports = router;

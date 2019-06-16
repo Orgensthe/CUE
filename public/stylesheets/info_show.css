@@ -1,0 +1,98 @@
+body{
+    background-color: #f2f2f2;
+}
+h1{
+    margin-left: -35%;
+    margin-top: 4%;
+    margin-bottom: 2%;
+}
+table{
+    margin-left: 2%;
+    font-size: 140%;
+    border-collapse: separate;
+    border-spacing: 15px 15px;
+    text-align: left;
+}
+table tr{
+    margin-top: 5%;
+}
+input{
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    padding-left: 8%;
+    padding-right: 8%;
+    font-size: 130%;
+    border: none;
+    background-color: #023759;
+    color: #f2f2f2;
+    margin-left: 30%;
+}
+.container{
+    text-align: center;
+}
+.summary{
+    width: 30%;
+    height: 25%;
+    display: inline-block;
+    margin-left: 5%;
+}
+.poster{
+    width: 25%;
+    height: 25%;
+    display: inline-block;
+    margin-left: 5%;
+    background-image: url(images/4.png);
+    background-position: center;
+}
+.poster img{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+.reserve{
+    text-align: center;
+}
+.bg-lightgray{
+    background-color: lightgray;
+}
+.nav > li > a{
+    display: inline-block;
+    color: black;
+}
+.nav-pills{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    height: 45px;
+}
+.nav-pills > li + li{
+    margin: 0;
+}
+.nav-pills > li > a{
+    border-radius: 0;
+    width: 100%;
+}
+.nav-pills > li > a:hover{
+    background: transparent;
+    color: #f2f2f2;
+}
+.nav-pills > li.active > a{
+    background: transparent;
+}
+.nav-justified{
+    text-align: center;
+}
+.nav-item{
+    font-size: 130%;
+    font-weight: bold;
+}
+.nav-pills > li:hover{
+    background-color: #023759;
+}
+.nav > .active {
+    color: #f2f2f2;
+    background-color: #023759;
+}
+.info1{
+    clear: left;
+    text-align: center;
+}
