@@ -12,8 +12,9 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'ejs');
+
 
 
 
@@ -36,7 +37,6 @@ var mypage = require('./routes/mypage');
 var mypage_creator = require('./routes/mypage_creator');
 var write_show = require('./routes/write_show');
 var list_search = require('./routes/list_search');
-var show_manage = require('./routes/show_manage');
 
 
 
@@ -54,7 +54,6 @@ app.use('/mypage', mypage);
 app.use('/mypage_creator',mypage_creator);
 app.use('/write_show', write_show);
 app.use('/list_search',list_search);
-app.use('/show_manage',show_manage);
 
 
 // catch 404 and forward to error handler
@@ -70,7 +69,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.end( err.message);
 });
 
 module.exports = app;

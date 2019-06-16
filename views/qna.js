@@ -1,18 +1,17 @@
-<script type="text/javascript">  
-        $(function(){
-            var article = (".recruit .show");  
-            $(".recruit .title  td").click(function() {  
-                var myArticle =$(this).parents().next("tr");  
-                if($(myArticle).hasClass('hide')) {  
-                    $(article).removeClass('show').addClass('hide');  
-                    $(myArticle).removeClass('hide').addClass('show');  
-                }  
-                else {  
-                    $(myArticle).addClass('hide').removeClass('show');  
-                }  
-            }); 
-        });
-</script>
+$(function(){
+    var article = (".recruit .show");
+    $(".recruit .title  td").click(function() {
+        var myArticle =$(this).parents().next("tr");
+        if($(myArticle).hasClass('hide')) {
+            $(article).removeClass('show').addClass('hide');
+            $(myArticle).removeClass('hide').addClass('show');
+        }
+        else {
+            $(myArticle).addClass('hide').removeClass('show');
+        }
+    });
+});
+
 
 //출처: https://woodstar.tistory.com/60 [MOUSE world]  **제일 유용해보임
 

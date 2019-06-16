@@ -37,7 +37,7 @@ input{
     height: 25%;
     display: inline-block;
     margin-left: 5%;
-    background-image: url(images/4.png);
+    /*background-image: url(images/4.png);*/
     background-position: center;
 }
 .poster img{
