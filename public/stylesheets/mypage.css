@@ -46,9 +46,6 @@ p{
 .bright:hover{
   background-color: gray;
 }
-.bright:link{
-  
-}
 .deep{
   background-color: #001625;
 }
@@ -59,6 +56,10 @@ p{
     margin: 0;
     color: aliceblue;
     height: 100%;
+    cursor: pointer;
+}
+.card > a{
+  color: #f2f2f2;
 }
 .card-body{
     margin: 0;
