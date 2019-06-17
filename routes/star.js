@@ -5,12 +5,6 @@ var FileStore = require('session-file-store')(session)
 var fb = require("./firebase");
 var router = express.Router();
 var firebase = require('firebase');
-require('date-utils');
-
-
-
-
-
 
 
 router.use(session({
@@ -38,7 +32,7 @@ async function readMyReserve(request,response){
       // key will be "ada" the first time and "alan" the second time
       var key = childSnapshot.key;
       var childData = childSnapshot.val().show_id
-      var isRated = childSnapshot.val().isRate
+      var isRated = childSnapshot.val().isRated
 
       // childData will be the actual contents of the child
       reserId.push([key,childData,isRated])
@@ -88,7 +82,7 @@ router.post('/', function(req, res, next) {
     
     console.log(req.body);
     console.log(req.body.phostName+"asdklfhlaksdjhfl")
-    request.get('http://localhost:3001/?method=train&name='+req.session.id+'&phost='+req.body.phostName+'&point='+req.body.star_input,
+    request.get('http://localhost:3001/?method=train&name='+req.session.email+'&phost='+req.body.phostName+'&point='+req.body.star_input,
     function (error, response, body) {
       console.log('error:', error); // Print the error if one occurred
       console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
@@ -97,8 +91,10 @@ router.post('/', function(req, res, next) {
 
     var id = Buffer.from(req.session.email).toString('base64');
   
-    firebase.database().ref('reservation/'+req.body.reservationName+"/isRate").set(req.body.star_input)
-
+    firebase.database().ref('reservation/'+req.body.reservationName+'/isRate').set(req.body.star_input)
+    var updates = {};
+    updates['/isRated']
+    
     readMyReserve(req,res)
   
     

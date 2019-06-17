@@ -4,6 +4,7 @@ var fb = require("./firebase");
 var firebase = require('firebase');
 var session = require('express-session')
 var FileStore = require('session-file-store')(session)
+var request = require('request');
 
 
 
@@ -28,9 +29,20 @@ var destinationurl = ''
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
+  if(req.session.is_logined == true){
+    request.get('http://localhost:3001/?method=ask&name='+req.session.email,
+    function (error, response, body) {
+      console.log('error:', error); // Print the error if one occurred
+      console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+      console.log('body:', body); // Print the HTML for the Google homepage.
+
+    } )
+
+  }
+
   async function rend(){
     var resultDiv =''
-    var result_top3 = ''
+    var result_top3 =''
     var db = await fb.readPhostByDate();
     await db.orderByChild("date").equalTo("2019-06-27").on("value", function read(snapshot) {
       snapshot.forEach(function(childSnapshot) {
@@ -44,27 +56,31 @@ router.get('/', function(req, res, next) {
           +lastchildDiv)
       });       
     })
-    var i = 0;
+
+    var i = 1;
     var ref = firebase.database().ref("phost");
     var top3 = ref.orderByChild('personNow').limitToLast(3);
+
     var val = top3.once('value').then(function(data){
+      console.log(data.val().fileURL);
     data.forEach(function(childSnapshot){
-        result_top3 += (startchildDiv2+i+'>'+'<a href="info_show?id='+childSnapshot.key+'">'+
-          preFixphostId+fileurl+'" id="'+childSnapshot.key+'">'+
+        var imgURL=Buffer.from(childSnapshot.val().fileURL,'base64').toString('ascii');
+        result_top3 += (startchildDiv2+i+'">'+'<a href="info_show?id='+childSnapshot.key+'">'+
+          preFixphostId+imgURL+'" id="'+childSnapshot.key +'">'+
           '</a>'
           +lastchildDiv)
+        i++;
+        console.log(childSnapshot.val().fileURL);
         });
-    });
+
     res.render('index',{
       di:resultDiv,
       top3:result_top3
     });
+    });
   }
-
   rend();
-
-
-  
 });
 
 module.exports = router;
+
