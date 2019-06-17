@@ -30,6 +30,29 @@ function userSignIn(email,userName, password,phone,interest,isteam) {
   });
 }
 
+function getTop3(){
+  return new Promise(function (resolve, reject) {
+    function getInfo(){
+      var snap;
+      // Find the two heaviest dinosaurs.
+      var ref = firebase.database().ref("phost");
+      var top3 = ref.orderByChild('personNow').limitToLast(3);
+      var val = top3.once('value').then(function(data){
+        data.forEach(function(childSnapshot){
+        console.log("====");
+        console.log(childSnapshot.key);
+        console.log("====");
+        });
+        // var top3_array = new Array();
+
+      });
+    }
+    resolve(
+      getInfo()
+      ).then(value => value);
+  });
+}
+
 function writeUserSearchLog(userId,searchValue) {
     // Initialize Firebase
     firebase.database().ref('searchLog/' + userId).set({
@@ -56,14 +79,14 @@ function getName(email){
 
     // new Promise() 추가     
     return new Promise(function (resolve, reject) {
-        resolve(firebase.database().ref('users/'+email).once('value').then(function phostData(data) {
-          return data.val().name
-          })).then(value => value);
+      resolve(firebase.database().ref('users/'+email).once('value').then(function phostData(data) {
+        return data.val().name
+      })).then(value => value);
     });
   }
   
 
-function loginActive(id,pwd) {
+  function loginActive(id,pwd) {
   // new Promise() 추가     
   var flag = false;
   return new Promise(function (resolve, reject) {
@@ -90,16 +113,16 @@ function makeReservation(email,show_id) {
 
 function writePhost(email,date,starttime,endtime,place,price,fileURL,introduce,limit) {
 
-    var date64 =Buffer.from(date).toString('base64')
-    var email64 = Buffer.from(email).toString('base64')
-    var starttime64 =Buffer.from(starttime).toString('base64')
-    var endtime64 =Buffer.from(endtime).toString('base64')
-    var fileURL64 =Buffer.from(fileURL).toString('base64')
-    var introduce64 =Buffer.from(introduce).toString('base64')
-    var place64 =Buffer.from(place).toString('base64')
-    var pricee64 =Buffer.from(price).toString('base64')
-    var writeDate = new Date().toTimeString()
-    var writeDate64 = Buffer.from(writeDate).toString('base64')
+  var date64 =Buffer.from(date).toString('base64')
+  var email64 = Buffer.from(email).toString('base64')
+  var starttime64 =Buffer.from(starttime).toString('base64')
+  var endtime64 =Buffer.from(endtime).toString('base64')
+  var fileURL64 =Buffer.from(fileURL).toString('base64')
+  var introduce64 =Buffer.from(introduce).toString('base64')
+  var place64 =Buffer.from(place).toString('base64')
+  var pricee64 =Buffer.from(price).toString('base64')
+  var writeDate = new Date().toTimeString()
+  var writeDate64 = Buffer.from(writeDate).toString('base64')
     // Initialize Firebase
 
     console.log(email64+ writeDate64)
@@ -120,14 +143,25 @@ function writePhost(email,date,starttime,endtime,place,price,fileURL,introduce,l
 
 
 
-function readPhost(id) {
+  function readPhost(id) {
   // new Promise() 추가     
   return new Promise(function (resolve, reject) {
-      resolve(firebase.database().ref('phost/'+id).once('value').then(function phostData(data) {
-        return data.val()
-        })).then(value => value);
+    resolve(firebase.database().ref('phost/'+id).once('value').then(function phostData(data) {
+      return data.val()
+    })).then(value => value);
   });
 }
+
+
+function plusNowCount(id,count) {
+  // new Promise() 추가
+  return new Promise(function (resolve, reject) {
+    resolve(firebase.database().ref('phost/'+id).update({
+      personNow : count
+    }));
+  })
+}
+
 
 function readPhostByDate() {
   // new Promise() 추가     
@@ -138,20 +172,14 @@ function readPhostByDate() {
       var ref = firebase.database().ref("phost");   
       return ref; 
     }
-      resolve(
-        readPhost()
-        ).then(value => value);
+    resolve(
+      readPhost()
+      ).then(value => value);
   });
 }
 
-function plusNowCount(id) {
-  // new Promise() 추가     
-  return new Promise(function (resolve, reject) {
-      resolve(firebase.database().ref('reservation/'+id).once('value').then(function phostData(data) {
-        return data.val()
-        })).then(value => value);
-  });
-}
+
+
 
 function readReserveByEmail() {
   // new Promise() 추가     
@@ -162,13 +190,11 @@ function readReserveByEmail() {
       var ref = firebase.database().ref("reservation");   
       return ref; 
     }
-      resolve(
-        readReserv()
-        ).then(value => value);
+    resolve(
+      readReserv()
+      ).then(value => value);
   });
 }
-
-
 function readReserv(id) {
   // new Promise() 추가     
   return new Promise(function (resolve, reject) {
@@ -179,6 +205,7 @@ function readReserv(id) {
 }
 
 module.exports ={
+  getTop3:getTop3,
   writeUserSearchLog:writeUserSearchLog,
   userSignIn:userSignIn,
   userInDB:userInDB,
@@ -189,8 +216,8 @@ module.exports ={
   readReserveByEmail:readReserveByEmail,
   readPhostByDate:readPhostByDate,
   makeReservation:makeReservation,
+  plusNowCount:plusNowCount,
+  readPhostByDate:readPhostByDate,
   readReserv:readReserv
-
-
 };
 

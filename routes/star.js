@@ -38,7 +38,7 @@ async function readMyReserve(request,response){
       // key will be "ada" the first time and "alan" the second time
       var key = childSnapshot.key;
       var childData = childSnapshot.val().show_id
-      var isRated = childSnapshot.val().isRated
+      var isRated = childSnapshot.val().isRate
 
       // childData will be the actual contents of the child
       reserId.push([key,childData,isRated])
