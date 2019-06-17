@@ -30,7 +30,7 @@ router.get('/', function(req, res, next) {
 
   async function rend(){
     var resultDiv =''
-    var result_top3 = ''
+    var result_top3 =''
     var db = await fb.readPhostByDate();
     await db.orderByChild("date").equalTo("2019-06-27").on("value", function read(snapshot) {
       snapshot.forEach(function(childSnapshot) {
@@ -44,27 +44,25 @@ router.get('/', function(req, res, next) {
           +lastchildDiv)
       });       
     })
-    var i = 0;
+    var i = 1;
     var ref = firebase.database().ref("phost");
     var top3 = ref.orderByChild('personNow').limitToLast(3);
     var val = top3.once('value').then(function(data){
     data.forEach(function(childSnapshot){
-        result_top3 += (startchildDiv2+i+'>'+'<a href="info_show?id='+childSnapshot.key+'">'+
-          preFixphostId+fileurl+'" id="'+childSnapshot.key+'">'+
+        result_top3 += (startchildDiv2+i+'">'+'<a href="info_show?id='+childSnapshot.key+'">'+
+          preFixphostId+fileurl+'" id="'+childSnapshot.key +'">'+
           '</a>'
           +lastchildDiv)
+        i++;
         });
-    });
     res.render('index',{
       di:resultDiv,
       top3:result_top3
     });
+    });
   }
-
   rend();
-
-
-  
 });
 
 module.exports = router;
+
