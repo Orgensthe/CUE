@@ -5,13 +5,18 @@
   <title>CUE!</title>
   <link rel="stylesheet" href="stylesheets/bootstrap.css">
   <link rel="stylesheet" href="stylesheets/bootstrap-grid.css">
-  <link rel="stylesheet" href="stylesheets/bootstrap-reboot.css">
-  <link rel="stylesheet" href="stylesheets/bootstrap-theme.css">
+
+  <!-- 합쳐지고 최소화된 최신 CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+  <!-- 부가적인 테마 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+  <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="stylesheets/menu3.css">
-  <link rel="stylesheet" href="stylesheets/fontawesome-stars.css">
+  <link rel="stylesheet" href="stylesheets/list_search.css">
   <link rel="stylesheet" href="stylesheets/search.css">
-  <!-- <link rel="stylesheet" href="stylesheets/star.css"> -->
-  <script type="text/javascript" src="javascripts/jquery.barrating.min.js"></script>
 </head>
 <body>
 <header>
@@ -79,58 +84,53 @@
   </nav>
 </header>
 
-<div class="container">
-  <p>내가 본 공연</p>
-  <div class="row">
-    <%
-      for(var i=0; i<result.length; i++) {
-
-        if(result[i][3] === undefined){ 
-    %>
-          
-          <div class="col-md-4 col-xs-6">
-              <form action ="star" method="POST">
-                  <img src="<%- result[i][2] %>">
-                  <span class="star_input"> <span class="input">
-                    <input type="hidden" value="<%-result[i][1] %>" name = "phostName">
-                    <select name = "star_input" >
-                          <option value="">Select a rating</option>
-                          <option value="5">Excellent</option>
-                          <option value="4">Very Good</option>
-                          <option value="3">Average</option>
-                          <option value="2">Poor</option>
-                          <option value="1">Terrible</option>
-                        </select>
-                        
-                    </span><output for="star_input"><b>0</b>점</output>
-                    <input type="submit"/>
-
-                  </span>
-              </form>
-          </div>
-         
-          
-          <%
-        }else{ %>   
-          
-          <div class="col-md-4 col-xs-6"></div>
-            <img src="<%- result[i][2] %>">
-            <span><%- result[i][3] %>점</span>
-          </div>
-          <%
-        }
-    }
- %>
-
-
+<div class="container-fluid">
+  <p class="top-list">우리 팀 공연</p>
+  <div class="sort">
+    <button class="new" value="new">최신순</button>
+    <button class="popular" value="old">오래된순서</button>
+    <button class="added" value="addnew" onclick="location.href='write_show'">추가하기</button>
   </div>
+
+  <div class="row">
+    <div class="col-md-4 col-xs-6">
+      <img src="images/2.png">
+    </div>
+    <div class="col-md-4 col-xs-6">
+      <img src="images/3.png">
+    </div>
+    <div class="col-md-4 col-xs-6">
+      <img src="images/4.png">
+    </div>
+    <div class="col-md-4 col-xs-6">
+      <img src="images/5.png">
+    </div>
+    <div class="col-md-4 col-xs-6">
+      <img src="images/6.png">
+    </div>
+    <div class="col-md-4 col-xs-6">
+      <img src="images/7.png">
+    </div>
+  </div>
+
+  <nav class="page_bar">
+    <ul class="pagination">
+      <li><a href="#"><span aria-hidden="true">«</span><span class="sr-only">Previous</span></a></li>
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li><a href="#"><span aria-hidden="true">»</span><span class="sr-only">Next</span></a></li>
+    </ul>
+  </nav>
+
+  
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="javascripts/bootstrap.js"></script>
 <script type="text/javascript" src="javascripts/menu2.js"></script>
 <script type="text/javascript" src="javascripts/search.js"></script>
-<script type="text/javascript" src="javascripts/rating.js"></script>
-
 </body>
 </html>
