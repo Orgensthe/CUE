@@ -28,6 +28,16 @@ var destinationurl = ''
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
+  if(req.session.is_logined == true){
+    request.get('http://localhost:3001/?method=train&name='+req.session.id+'&phost='+req.body.phostName+'&point='+req.body.star_input,
+    function (error, response, body) {
+      console.log('error:', error); // Print the error if one occurred
+      console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+      console.log('body:', body); // Print the HTML for the Google homepage.
+    } )
+
+  }
+
   async function rend(){
     var resultDiv =''
     var result_top3 =''
