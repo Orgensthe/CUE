@@ -8,8 +8,10 @@
   <link rel="stylesheet" href="stylesheets/bootstrap-reboot.css">
   <link rel="stylesheet" href="stylesheets/bootstrap-theme.css">
   <link rel="stylesheet" href="stylesheets/menu3.css">
+  <link rel="stylesheet" href="stylesheets/fontawesome-stars.css">
   <link rel="stylesheet" href="stylesheets/search.css">
-  <link rel="stylesheet" href="stylesheets/star.css">
+  <!-- <link rel="stylesheet" href="stylesheets/star.css"> -->
+  <script type="text/javascript" src="javascripts/jquery.barrating.min.js"></script>
 </head>
 <body>
 <header>
@@ -80,49 +82,47 @@
 <div class="container">
   <p>내가 본 공연</p>
   <div class="row">
-    <div class="col-md-4 col-xs-6">
-      <form action ="star" method="POST">
-      <img src="images/2.png">
-        <span class="star-input">
-          <span class="input">
-              <input type="radio" name="star-input" value="1" id="p1">
-              <label for="p1">1</label>
-              <input type="radio" name="star-input" value="2" id="p2">
-              <label for="p2">2</label>
-              <input type="radio" name="star-input" value="3" id="p3">
-              <label for="p3">3</label>
-              <input type="radio" name="star-input" value="4" id="p4">
-              <label for="p4">4</label>
-              <input type="radio" name="star-input" value="5" id="p5">
-              <label for="p5">5</label>
-            </span>
-            <output for="star-input"><b>0</b>점</output>
-        </span>
-    </form>
-    </div>
-    
-   
+    <%
+      for(var i=0; i<result.length; i++) {
 
-    <div class="col-md-4 col-xs-6">
-      <img src="images/3.png">
+        if(result[i][3] === undefined){ 
+    %>
+          
+          <div class="col-md-4 col-xs-6">
+              <form action ="star" method="POST">
+                  <img src="<%- result[i][2] %>">
+                  <span class="star_input"> <span class="input">
+                    <input type="hidden" value="<%-result[i][1] %>" name = "phostName">
+                    <select name = "star_input" >
+                          <option value="">Select a rating</option>
+                          <option value="5">Excellent</option>
+                          <option value="4">Very Good</option>
+                          <option value="3">Average</option>
+                          <option value="2">Poor</option>
+                          <option value="1">Terrible</option>
+                        </select>
+                        
+                    </span><output for="star_input"><b>0</b>점</output>
+                    <input type="submit"/>
 
-    </div>
-    <div class="col-md-4 col-xs-6">
-      <img src="images/4.png">
+                  </span>
+              </form>
+          </div>
+         
+          
+          <%
+        }else{ %>   
+          
+          <div class="col-md-4 col-xs-6"></div>
+            <img src="<%- result[i][2] %>">
+            <span><%- result[i][3] %>점</span>
+          </div>
+          <%
+        }
+    }
+ %>
 
-    </div>
-    <div class="col-md-4 col-xs-6">
-      <img src="images/5.png">
 
-    </div>
-    <div class="col-md-4 col-xs-6">
-      <img src="images/6.png">
-
-    </div>
-    <div class="col-md-4 col-xs-6">
-      <img src="images/7.png">
-
-    </div>
   </div>
 </div>
 

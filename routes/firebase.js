@@ -195,8 +195,14 @@ function readReserveByEmail() {
       ).then(value => value);
   });
 }
-
-
+function readReserv(id) {
+  // new Promise() 추가     
+  return new Promise(function (resolve, reject) {
+      resolve(firebase.database().ref('reservation/'+id).once('value').then(function reserveData(data) {
+        return data.val()
+        })).then(value => value);
+  });
+}
 
 module.exports ={
   getTop3:getTop3,
@@ -208,8 +214,10 @@ module.exports ={
   writePhost:writePhost,
   readPhost:readPhost,
   readReserveByEmail:readReserveByEmail,
+  readPhostByDate:readPhostByDate,
   makeReservation:makeReservation,
   plusNowCount:plusNowCount,
   readPhostByDate:readPhostByDate
+  readReserv:readReserv
 };
 
