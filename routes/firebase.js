@@ -169,6 +169,15 @@ function readReserveByEmail() {
 }
 
 
+function readReserv(id) {
+  // new Promise() 추가     
+  return new Promise(function (resolve, reject) {
+      resolve(firebase.database().ref('reservation/'+id).once('value').then(function reserveData(data) {
+        return data.val()
+        })).then(value => value);
+  });
+}
+
 module.exports ={
   writeUserSearchLog:writeUserSearchLog,
   userSignIn:userSignIn,
@@ -178,6 +187,9 @@ module.exports ={
   writePhost:writePhost,
   readPhost:readPhost,
   readReserveByEmail:readReserveByEmail,
-  readPhostByDate:readPhostByDate
+  readPhostByDate:readPhostByDate,
+  makeReservation:makeReservation,
+  readReserv:readReserv
+
 };
 

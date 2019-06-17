@@ -17,27 +17,22 @@ router.get('/', function(req, res) {
 	var show_id = req.session.show_id;
 	req.session.originalurl = "/info_show?id="+show_id
 	req.session.reserve = false;
+	console.log(req.session.reserve);
+	console.log(req.session.originalurl);
+
 
 	async function doReserve(){
+		console.log(req.session.email);
 		var id = Buffer.from(req.session.email).toString('base64');
-		var db = await fb.readReserveByEmail();
-		await db.orderByChild("email").equalTo(id).on("value",function read(snapshot){
-			snapshot.forEach(function(childSnapshot){
-				var maximum = childSnapshot.val().personLimit;
-				var now = childSnapshot.val().personNow;
-				if((parseInt(maximum,10)- parseInt(now),10) > 0){
-					makeReservation(id,show_id);
-					req.session.reserve = true;
-					res.redirect(req.session.originalurl);
-				} else {
-					req.session.reserve = false;
-					res.redirect(req.session.originalurl);
-				}
-			});
-		})
+		console.log("1");
+		var db = await fb.readPhost(req.session.show_id);
+		if(parseInt(db.personLimit)-parseInt(db.personNow) <=0){
+			
+		}else{
+			fb.makeReservation(id,req.session.show_id)
+		}
 	}
 
-	
 	if(req.session.is_logined){
 		doReserve();
 	} else {
