@@ -7,8 +7,8 @@
 6 silly lifecycle cue@0.0.0~prestart: no script for prestart, continuing
 7 info lifecycle cue@0.0.0~start: cue@0.0.0
 8 verbose lifecycle cue@0.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle cue@0.0.0~start: PATH: /usr/share/npm/bin/node-gyp-bin:/home/jeff/바탕화면/git/CUE/node_modules/.bin:/home/jeff/go/bin:/usr/local/go/bin:/home/jeff/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/.build/bin:/.build/bin
-10 verbose lifecycle cue@0.0.0~start: CWD: /home/jeff/바탕화면/git/CUE
+9 verbose lifecycle cue@0.0.0~start: PATH: /usr/share/npm/bin/node-gyp-bin:/home/yeonwook/CUE_BACK/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/root/go/bin:/root/gopath/src/github.com/hyperledger/fabric/.build/bin
+10 verbose lifecycle cue@0.0.0~start: CWD: /home/yeonwook/CUE_BACK
 11 silly lifecycle cue@0.0.0~start: Args: [ '-c', 'node ./bin/www' ]
 12 silly lifecycle cue@0.0.0~start: Returned: code: 1  signal: null
 13 info lifecycle cue@0.0.0~start: Failed to exec start script
@@ -23,8 +23,8 @@
 14 verbose stack     at maybeClose (internal/child_process.js:925:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
 15 verbose pkgid cue@0.0.0
-16 verbose cwd /home/jeff/바탕화면/git/CUE
-17 error Linux 4.18.0-15-generic
+16 verbose cwd /home/yeonwook/CUE_BACK
+17 error Linux 4.18.0-21-generic
 18 error argv "/usr/bin/node" "/usr/bin/npm" "start"
 19 error node v8.10.0
 20 error npm  v3.5.2
