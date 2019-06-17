@@ -217,7 +217,7 @@ module.exports ={
   readPhostByDate:readPhostByDate,
   makeReservation:makeReservation,
   plusNowCount:plusNowCount,
-  readPhostByDate:readPhostByDate
+  readPhostByDate:readPhostByDate,
   readReserv:readReserv
 };
 
