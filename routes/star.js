@@ -4,6 +4,14 @@ var session = require('express-session')
 var FileStore = require('session-file-store')(session)
 var fb = require("./firebase");
 var router = express.Router();
+var firebase = require('firebase');
+require('date-utils');
+
+
+
+
+
+
 
 router.use(session({
   secret: 'CUE_PROJECT',
@@ -88,8 +96,9 @@ router.post('/', function(req, res, next) {
     } )
 
     var id = Buffer.from(req.session.email).toString('base64');
-    console.log(req.session.email)
-    console.log(id);
+  
+    firebase.database().ref('reservation/'+req.body.reservationName+"/isRate").set(req.body.star_input)
+
     readMyReserve(req,res)
   
     

@@ -29,7 +29,6 @@ router.get('/', function(req, res, next) {
     var dataValue = await fb.readPhost(id);
     await res.render('info_show',{
       fileUrl:Buffer.from(dataValue.fileURL, 'base64').toString('utf-8'),
-      script_code:
       date:dataValue.date,
       price:Buffer.from(dataValue.price, 'base64').toString('utf-8'),
       place:Buffer.from(dataValue.place, 'base64').toString('utf-8'),
