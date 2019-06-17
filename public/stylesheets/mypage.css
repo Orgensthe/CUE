@@ -104,3 +104,9 @@ p{
   text-decoration: none;
   color: aliceblue;
 }
+
+.log_out{
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
