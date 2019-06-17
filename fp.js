@@ -46,7 +46,7 @@ app.get('/', function(req, res){
         var username = req.query.name
         let gt = cf.gt([[username]]);
         console.log(gt)
-        res.end(gt)
+        res.send(gt);
     }
     
 });
