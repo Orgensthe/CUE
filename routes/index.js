@@ -44,17 +44,23 @@ router.get('/', function(req, res, next) {
           +lastchildDiv)
       });       
     })
+
     var i = 1;
     var ref = firebase.database().ref("phost");
     var top3 = ref.orderByChild('personNow').limitToLast(3);
+
     var val = top3.once('value').then(function(data){
+      console.log(data.val().fileURL);
     data.forEach(function(childSnapshot){
+        var imgURL=Buffer.from(childSnapshot.val().fileURL,'base64').toString('ascii');
         result_top3 += (startchildDiv2+i+'">'+'<a href="info_show?id='+childSnapshot.key+'">'+
-          preFixphostId+fileurl+'" id="'+childSnapshot.key +'">'+
+          preFixphostId+imgURL+'" id="'+childSnapshot.key +'">'+
           '</a>'
           +lastchildDiv)
         i++;
+        console.log(childSnapshot.val().fileURL);
         });
+
     res.render('index',{
       di:resultDiv,
       top3:result_top3
