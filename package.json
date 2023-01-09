@@ -16,7 +16,7 @@
     "express-fileupload": "^1.1.5",
     "express-session": "^1.16.2",
     "firebase": "^6.2.0",
-    "firebase-admin": "^8.1.0",
+    "firebase-admin": "^11.4.1",
     "http-errors": "~1.6.3",
     "module": "^1.2.5",
     "morgan": "~1.9.1",
